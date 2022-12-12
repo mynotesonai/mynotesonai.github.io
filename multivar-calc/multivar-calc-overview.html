@@ -1,0 +1,181 @@
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>My Notes on AI</title>
+
+  <!-- CSS  -->
+  <link rel="stylesheet" href="https://fast.fonts.net/cssapi/0340becf-de91-4caa-9bd5-90b2ef07bbd3.css" />
+  <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+  <!--  Scripts-->
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/materialize.js"></script>
+  <script src="../js/init.js"></script>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+  <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+        });
+    </script>
+</head>
+
+<body>
+  <div class="fullscreen">
+
+    <nav class="white" role="navigation" style="position:fixed;top:0px;z-index:1000;border-bottom:1px solid #e6d9ce;">
+      <div class="container">
+        <div class="nav-wrapper">
+
+          <ul class="right">
+            <li><a href="#"></a></li>
+          </ul>
+
+          <ul id="nav-mobile" class="side-nav fixed">
+            <li><a href="../index.html">Home</a></li>
+				    <li style="padding-bottom:15px"><a href="linear-algebra-content-list.html"><span style="line-height:25px">Linear Algebra using<br>Math Expressions and Numpy</span></a></li>
+            <li style="padding-bottom:15px"><a href="multivariable-calc-content-list.html"><span style="line-height:25px">Multivariable<br>Calculus and Automatic Differentiation</span></a></li>
+				    <li style="padding-bottom:15px"><a href="ml-content-list.html"><span style="line-height:25px">Machine Learning with scikit-learn (Supervised, Unsupervised, and Ensemble Learning)</span></a></li>
+				    <li style="padding-bottom:15px"><a href="dl-content-list.html"><span style="line-height:25px">Deep Learning with CNN, RNN &amp; LSTM</span></a></li>
+				    <li style="padding-bottom:15px"><a href="cv-content-list.html"><span style="line-height:25px">Computer Vision for Image recognition and OCR</span></a></li>
+						<li style="padding-bottom:15px"><a href="nlp-content-list.html"><span style="line-height:25px">Natural Language<br>Processing with Transformers</span></a></li>
+						<li><a href="ml-ops-content-list.html"><span style="line-height:25px">ML-Ops<br>Deploying Models to Production</span></a></li>
+          </ul>
+          <a href="#" data-activates="nav-mobile" class="button-collapse">
+            <i class="mdi-navigation-menu brand-text-color"></i>
+          </a>
+
+          <a id="logo-container" href="#" class="navigationactionbarcontentscreentitle brand-text-color"><div style="float:left;"><img src="../images/notes-icon-4.svg" width="60" height="60"></div><div style="float:left;margin-left:10px;">My Notes on AI</div></a>
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="container" style="position:relative;top:56px;">
+			<div style="height:100%;float:left;padding:0px;margin:0px">
+				<div class="page">
+        <p class="topic-name" style="font-weight: 500">Multivariable Calculus</p>
+				<h5 class="section-title-3">Introduction</h4>
+        <p class="para-content">Single variable calculus involves the study of functions of a Single
+        variable, the concepts of Limits and Continuity, differentiation and integration. In real world we
+       observe and investigate the dependence of one or more quantities on a bunch of factors, such as time,
+       location, temperature and air pressure to name a few. Therefore, in reality we often come across
+       functions of many variables. f(x,y) is the function of two variables, f(x,y,z) is the function
+       of three variables.$\mathbb{R}^2$ is the set of all pairs (x,y) for real numbers,$\mathbb{R}^3$ denotes all
+       triplets of real numbers and $\mathbb{R}^n$ is for all tuples of real numbers.</p>
+        <h5 class="section-title-3">Rectangular Coordinate System</h4>
+        <p class="para-content">
+          A point $P_0$ in 2D space can be described as pairs of numbers namely its Cartesian Coordinates($x_0$, $y_0$).
+          Cartesian coordinate system has 2 perpendicular axes, the x-axis and the y-axis.
+        </p>
+        <p class="para-content">
+          In case of 3D, where we have an extra axis, the z-axis, we usually make the z-axis vertical and pointing upward,
+          and we make the x-axis and y-axis as the horizontal xy plane as follows. In order to find a coordinate point
+          $P_0$, we need to project it perpendicularly to the corresponding axis(parallel to the plane spanned
+          by the remaining axis). This canbe done in two steps, we first find the point $P'_0$ that is
+          the perpendicular projection of P to the xy-plane. Then $x_0$, $y_0$ are the coordinates
+          of $P'_0$ in the xy-plane and $z_0$ is the distance between P0and $P'_0$ with a positive sign
+          if P is located above the xy-plane and with a negative sign in the opposite case.
+        </p>
+        <p class="para-content">
+          To find a point with given coordinates ($x_0$, $y_0$, $z_0$) first find $P'_0$ with
+          coordinates($x_0$, $y_0$) in the xy-plane and the go up by the distance of |$z_0$| = $z_0$
+          if $z_0$ ≥ 0 or downby |$z_0$|=−$z_0$ if $z_0$ < 0 to find $P_0$.
+        </p>
+        <p class="para-content">
+          The coordinate system as drawn above is called a right-handed system(when the fingers of the right hand
+          are cupped so that they curve from the positivex-axis toward the positive y-axis, the thumb points (roughly)
+          in the direction of thepositive z-axis). If we interchange the positions of the x-axis and y-axis,
+          then weobtain a left-handed system. It can be shown that rectangular coordinate systems in3-space fall into
+          just these two categories: right-handed and left-handed.
+        </p>
+        <h5 class="section-title-3">Vectors</h5>
+        <p class="para-content">
+          Vectors signifies shift. A Shifts in the plane or space can be described by saying to what point $P^2$ a givenpoint P1has been shifted.
+          The line ℓconnecting $P^1$ and $P^2$ gives the direction of theshift. Any other point Q1would be shifted along a line parallel to $l$
+          by a distance equal to the distance between $P^1$ and $P^2$ to a point $Q^2$, so that $P^1$, $P^2$, $Q^1$, $Q^2$
+          form a parallelogram. For this description it did not matter whether we
+          started at $P_1$ or $Q_1$, so instead of the pairs $P_1$($x_1$, $y_1$, $z_1$)$P_2$(($x_2$, $y_2$, $z_2$)
+          or $Q_1$($x_1$, $y_1$, $z_1$)$Q_2$(($x_2$, $y_2$, $z_2$)we may consider the object
+        </p>
+        <p class="para-content">
+          $\vec{v}$  = <$x_1$ - $x_2$,  $y_1$ - $y_2$,  $z_1$ - $z_2$> = <$X_1$ - $X_2$,  $Y_1$ - $Y_2$,  $Z_1$ - $Z_2$>
+        </p>
+        <p class="para-content">
+          called vector $(in 3-space)^2$. To indicate that a vector $\vec{v}$ is represented by an initial point $P_1$
+          and terminal point $P_2$ we write $\vec{v}$ = $\overrightarrow{P_1P_2}$
+        </p>
+        <p class="para-content">
+          0 vector denotes no shift which implies that the initial and the terminal point are the same.
+
+          $$ \vec{v} = <0, 0, 0>$$
+        </p>
+        <h5 class="section-title-3">Adding and Scaling vectors and vector poperties</h5>
+        <p class="para-content">
+          $$ \vec{v_1} + \vec{v_2} = < x_1 + y_1 + z_1> + < x_2 + y_2 + z_2> = < x_1 + x_2, y_1 + y_2, z_1 + z_2> $$
+        </p>
+        <h5 class="section-title-3">Linear Transformation</h5>
+        <p class="para-content">
+          Linear operation preserves a Linear Combination. We have often heard that Differentiation is a linear
+          operation, because the dericative
+        </p>
+        <h5 class="section-title-3">Linear Transformation - Matrix Vector Multiplication</h5>
+        <p class="para-content">
+          Linear operation preserves a Linear Combination. We have often heard that Differentiation is a linear
+          operation, becaus the dericative
+        </p>
+      </div>
+      <div class="page"></div>
+			<div>&nbsp;</div>
+			</div>
+			<div style="width:10%;border-left:1px solid #e6d9ce;height:20cm;float:right;position:fixed;right:4%">
+
+			</div>
+
+    </div>
+
+  </div>
+  <!--<footer class="page-footer"></footer>-->
+  <script>
+    (function ($) {
+      $(function () {
+
+        function handleSideBar() {
+          var screenWidth = screen.width;
+
+          if (screenWidth <= 900) {
+            $('.button-collapse').show();
+            $('.button-collapse').sideNav();
+            $('.page').css('padding', '10px')
+          } else {
+            $('.button-collapse').hide();
+            $('.page').css('padding', '20mm 30mm 20mm 30mm');
+          }
+        }
+
+        handleSideBar();
+        window.addEventListener('resize', function () {
+          handleSideBar();
+        });
+
+
+        /* $('.button-collapse').click( function(e) {
+          if (screenWidth > 900) {
+            console.log("here");
+            e.preventDefault();
+            // $('.button-collapse').sideNav('show');
+            return false;
+          }
+        }); */
+        // $('.button-collapse').sideNav('fixed');
+
+      }); // end of document ready
+    })(jQuery); // end of jQuery name space
+  </script>
+</body>
+
+</html>

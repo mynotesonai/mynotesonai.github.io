@@ -1,0 +1,116 @@
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>My Notes on AI</title>
+
+  <!-- CSS  -->
+  <link rel="stylesheet" href="https://fast.fonts.net/cssapi/0340becf-de91-4caa-9bd5-90b2ef07bbd3.css" />
+  <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+  <!--  Scripts-->
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/materialize.js"></script>
+  <script src="../js/init.js"></script>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+  <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+        });
+    </script>
+</head>
+
+<body>
+  <div class="fullscreen">
+    <nav class="white" role="navigation" style="position:fixed;top:0px;z-index:1000;border-bottom:1px solid #e6d9ce;">
+      <div class="container">
+        <div class="nav-wrapper">
+
+          <ul class="right">
+            <li><a href="#"></a></li>
+          </ul>
+
+          <ul id="nav-mobile" class="side-nav fixed">
+            <li><a href="index.html">Home</a></li>
+				    <li style="padding-bottom:15px"><a href="linear-algebra-content-list.html"><span style="line-height:25px">Linear Algebra using<br>Math Expressions and Numpy</span></a></li>
+            <li style="padding-bottom:15px"><a href="multivariable-calc-content-list.html"><span style="line-height:25px">Multivariable<br>Calculus and Automatic Differentiation</span></a></li>
+				    <li style="padding-bottom:15px"><a href="ml-content-list.html"><span style="line-height:25px">Machine Learning with scikit-learn (Supervised, Unsupervised, and Ensemble Learning)</span></a></li>
+				    <li style="padding-bottom:15px"><a href="dl-content-list.html"><span style="line-height:25px">Deep Learning with CNN, RNN &amp; LSTM</span></a></li>
+				    <li style="padding-bottom:15px"><a href="cv-content-list.html"><span style="line-height:25px">Computer Vision for Image recognition and OCR</span></a></li>
+						<li style="padding-bottom:15px"><a href="nlp-content-list.html"><span style="line-height:25px">Natural Language<br>Processing with Transformers</span></a></li>
+						<li><a href="ml-ops-content-list.html"><span style="line-height:25px">ML-Ops<br>Deploying Models to Production</span></a></li>
+          </ul>
+          <a href="#" data-activates="nav-mobile" class="button-collapse">
+            <i class="mdi-navigation-menu brand-text-color"></i>
+          </a>
+
+          <a id="logo-container" href="#" class="navigationactionbarcontentscreentitle brand-text-color"><div style="float:left;"><img src="../images/notes-icon-4.svg" width="60" height="60"></div><div style="float:left;margin-left:10px;">My Notes on AI</div></a>
+
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="container" style="position:relative;top:56px;">
+			<div style="height:100%;float:left;padding:0px;margin:0px">
+			<div class="content-list">
+        <h4 class="section-title-2">Build, Train and Deploy ML Pipelines using BERT</h4>
+        <p class="para-content">BERT is a state-of-the-art architecture based on Transformer Architecture. BERT Training is a two step process.
+        The first step is called Pre-Trining and the next step is fine tuning for a specific language task. The original BERT model has been trained
+        using gigantic amout of data in Google Research Lab. Several pre-trained model of BERT is available for us which we can use to fine tune
+        our specific task. This section will also include monitor and profile the model training during fine-tuning step.</p>
+        <p class="para-content">Once the pre-training is done, an ML pipeline is also need to be in-place to complete the deployment demonstration that will
+        orchestrate the variuos steps of feature engineering, model training and evaluatuion and the model deployment. The last step would
+        be to focus on automating an end-to-end machine learning workflow.</p>
+
+				<h4 class="section-title-2">BERT Model Feature Engineering</h4>
+        <p class="para-content">In this phase raw data is trasformed to features by the application of Business
+        domain knowledge, statistical transformation and exploratory data anlysis. We derive meaningful features
+        for training the model. AWS Feature Store is a tool that has been used in order to derive meaningful features.
+        This process involves preparing data in order to fit to the nominated model and also obtain good performance
+        from the model. Feature Engineering components are <b>Feature Selection, Feature Creation</b>, and <b>Featute Transformation.</b></p>
+
+        <p class="para-content">In this phase the dimensionality of feature set is reduced in order to facilitate
+          faster training process. Feature Importance chart is a good indicator of the the relevant features required
+          for training the model. Feature inference is a process of inferring new features from an existing features.
+          Feature transformation step uses the Imputation technique to come up with missing fature values and Feature Scaling
+          numerical features using Standardization or Normalization and converts the non-numerical features to numerical values.</p>
+
+      </div>
+			<div>&nbsp;</div>
+			</div>
+    </div>
+
+  </div>
+  <!--<footer class="page-footer"></footer>-->
+  <script>
+    (function ($) {
+      $(function () {
+
+        function handleSideBar() {
+          var screenWidth = screen.width;
+
+          if (screenWidth <= 900) {
+            $('.button-collapse').show();
+            $('.button-collapse').sideNav();
+            $('.page').css('padding', '10px')
+          } else {
+            $('.button-collapse').hide();
+            $('.page').css('padding', '20mm 30mm 20mm 30mm');
+          }
+        }
+
+        handleSideBar();
+        window.addEventListener('resize', function () {
+          handleSideBar();
+        });
+      }); // end of document ready
+    })(jQuery); // end of jQuery name space
+  </script>
+</body>
+
+</html>

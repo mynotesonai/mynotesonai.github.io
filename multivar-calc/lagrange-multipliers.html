@@ -1,0 +1,221 @@
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>My Notes on AI</title>
+
+  <!-- CSS  -->
+  <link rel="stylesheet" href="https://fast.fonts.net/cssapi/0340becf-de91-4caa-9bd5-90b2ef07bbd3.css" />
+  <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+  <!--  Scripts-->
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/materialize.js"></script>
+  <script src="../js/init.js"></script>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+  <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+        });
+    </script>
+</head>
+
+<body>
+  <div class="fullscreen">
+
+    <nav class="white" role="navigation" style="position:fixed;top:0px;z-index:1000;border-bottom:1px solid #e6d9ce;">
+      <div class="container">
+        <div class="nav-wrapper">
+
+          <ul class="right">
+            <li><a href="#"></a></li>
+          </ul>
+
+          <ul id="nav-mobile" class="side-nav fixed">
+            <li><a href="../index.html">Home</a></li>
+				    <li style="padding-bottom:15px"><a href="../linear-algebra-content-list.html"><span style="line-height:25px">Linear Algebra using<br>Math Expressions and Numpy</span></a></li>
+            <li style="padding-bottom:15px"><a href="../multivariable-calc-content-list.html"><span style="line-height:25px">Multivariable<br>Calculus and Automatic Differentiation</span></a></li>
+				    <li style="padding-bottom:15px"><a href="../ml-content-list.html"><span style="line-height:25px">Machine Learning with scikit-learn (Supervised, Unsupervised, and Ensemble Learning)</span></a></li>
+				    <li style="padding-bottom:15px"><a href="../dl-content-list.html"><span style="line-height:25px">Deep Learning with CNN, RNN &amp; LSTM</span></a></li>
+				    <li style="padding-bottom:15px"><a href="../cv-content-list.html"><span style="line-height:25px">Computer Vision for Image recognition and OCR</span></a></li>
+						<li style="padding-bottom:15px"><a href="../nlp-content-list.html"><span style="line-height:25px">Natural Language<br>Processing with Transformers</span></a></li>
+						<li><a href="ml-ops-content-list.html"><span style="line-height:25px">ML-Ops<br>Deploying Models to Production</span></a></li>
+          </ul>
+          <a href="#" data-activates="nav-mobile" class="button-collapse">
+            <i class="mdi-navigation-menu brand-text-color"></i>
+          </a>
+
+          <a id="logo-container" href="#" class="navigationactionbarcontentscreentitle brand-text-color"><div style="float:left;"><img src="../images/notes-icon-4.svg" width="60" height="60"></div><div style="float:left;margin-left:10px;">My Notes on AI</div></a>
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="container" style="position:relative;top:56px;">
+			<div style="height:100%;float:left;padding:0px;margin:0px">
+				<div class="page">
+              <p class="topic-name" style="font-weight: 500">Lagrange Multipliers</p>
+              <p class="para-content">
+                A lagrange multiplier is a method that is used in the method of optimization,
+                for minimizing and maximizing a function subject to some constraint on the variables.
+                In single variable scenario
+              </p>
+
+              <h5 class="section-title-3">Lagrange Multiplier Example</h5>
+              <p class="para-content">
+              $$ \text{$f(x, y, z) = x^2 + y^2 + z^2$ if $x + y + z = 1$, and $x + 2y + 3z = 6$}$$
+              $$ g(x, y, z) = x + y + z - 1 $$
+              $$ h(x, y, z) = x + 2y + 3z - 6 $$
+            </p>
+            <section id="section-4">
+              <h5 class="section-title-2">Solution</h5>
+              <div class="row">
+                    <table class="table">
+                      <tbody>
+                        <tr>
+                          <td>$$ \frac{\partial f}{\partial x} = 2x $$</td>
+                          <td>$$ \frac{\partial f}{\partial y} = 2y $$</td>
+                          <td>$$ \frac{\partial f}{\partial z} = 2z $$</td>
+                        </tr>
+                        <tr>
+                          <td>$$ \frac{\partial g}{\partial x} = 1 $$</td>
+                          <td>$$ \frac{\partial g}{\partial y} = 1 $$</td>
+                          <td>$$ \frac{\partial f}{\partial z} = 2z $$</td>
+                        </tr>
+                        <tr>
+                          <td>$$ \frac{\partial h}{\partial x} = 1 $$</td>
+                          <td>$$ \frac{\partial h}{\partial y} = 2 $$</td>
+                          <td>$$ \frac{\partial h}{\partial z} = 3 $$</td>
+                        </tr>
+                      </tbody>
+                    </table>
+          <p> Formulating the lagrange multiplier equations and solve for x, y and z </p>
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <td>$$ 2x = \lambda + \mu $$</td>
+                      <td>$$ x = \frac{\lambda + \mu} {2} $$</td>
+                      <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td>$$ 2x = \lambda + \mu $$</td>
+                      <td>$$ y = \frac{\lambda + 2\mu} {2} $$</td>
+                      <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td>$$ 2x = \lambda + \mu $$</td>
+                      <td>$$ z = \frac{\lambda + 3\mu} {2} $$</td>
+                      <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+          <p class="para-content"> Plugging in the value of x, y and z into the constraint equation </p>
+          <p class="para-content"> $$ x = \frac{\lambda + \mu} {2} + y = \frac{\lambda + 2\mu} {2} + z = \frac{\lambda + 3\mu} {2} = 1$$</p>
+          <p class="para-content"> Multiplying both sides by 2 </p>
+          <p class="para-content"> $$ \lambda +  \mu + \lambda + 2\mu + \lambda + 3\mu = 2 $$ </p>
+          <p class="para-content"> $$ 3\lambda +  6\mu = 2 \text{  ____  } (i) $$</p>
+
+        </div>
+        </section>
+    </div>
+
+    <div class="page">
+        <p class="para-content">
+          $$ \frac{\lambda + \mu} {2} + 2(\frac{\lambda + 2\mu} {2}) + 2(\frac{\lambda + 3\mu} {2}) = 6$$
+          $$ \frac{\lambda + \mu} {2} + \frac{2\lambda + 4\mu} {2} + \frac{3\lambda + 9\mu} {2} = 6 $$
+          $$ 6\lambda + 14\mu = 12 $$
+          $$ 3\lambda + 7\mu = 6 \text{  ____  } (ii)$$
+
+        </p>
+        <p class="para-content">
+          We will now use equations (i) and (ii) to solve for $\lambda$        and       $\mu$ </br>
+          $$ 3\lambda + 6\mu = 2 $$
+          $$ (3\lambda + 7\mu = 6 ) $$
+          $$ \text{__________________________________} $$
+          $$ -\mu = -4 $$
+
+          Substituting $\mu$ in equation (i) we get </br>
+          $$ 3\lambda + 6(4) = 2 $ $$
+          $$ 3\lambda + 24 = 2 $ $$
+          $$ \lambda  = -\frac{22}{3} $$
+        </p>
+        <p class="para-content">
+          Now that we have $\lambda$ and $\mu$ we can plug those values into the equations of x, y and z
+          $$ \mu = 4 = \frac{12}{3} $$
+          $$ \lambda = -\frac{22}{3} $$
+          $$ x = \frac{-\frac{22}{3} + \frac{12}{3}}{2} $$
+          $$ x = -\frac{5}{3} $$
+
+          $$ y = \frac{-\frac{22}{3} + \frac{24}{3}}{2} $$
+          $$ y = \frac{1}{3} $$
+
+          $$ z = \frac{-\frac{22}{3} + \frac{36}{3}}{2} $$
+          $$ z = \frac{7}{3} $$
+
+          $$ x = -\frac{5}{3} \text{, } y = \frac{1}{3} , z = \frac{7}{3} $$
+        </p>
+        <p class="para-content">
+          The last step is plug those values in the original function. these are the coordinate points and we are
+          evaluating this function at that point to see what the value is
+          $$ f(-\frac{5}{3}, \frac{1}{3}, \frac{7}{3}) = (-\frac{5}{3})^2 + (\frac{1}{3})^2 + (\frac{7}{3})^2 $$
+          $$ f(-\frac{5}{3}, \frac{1}{3}, \frac{7}{3}) = \frac{25}{3} $$
+        </p>
+
+    </div>
+    <div class="page">
+      <p class="para-content">
+        At this stage we know that $\frac{25}{3}$ is the extrema of the function evaluated at $ f(-\frac{5}{3}, \frac{1}{3}, \frac{7}{3}) = \frac{25}{3} $
+        Now we need to determine if this is the maxima or the minima. We know that this function
+        $f(x, y, z) = x^2 + y^2 + z^2$  is a paraboloid that opens up.
+      </p>
+      <p class="para-content">
+        So we know that there is maximum of the dunction
+       because this shape increases forever in the upword direction. So we can conclude that the function with These
+       two constraints have one minima at $f(-\frac{5}{3}, \frac{1}{3}, \frac{7}{3}) = \frac{25}{3}$ coordinates,
+       that is $\frac{25}{3}$ and there are no maxima.
+     </p>
+    </div>
+
+
+      <div class="page"></div>
+			<div>&nbsp;</div>
+			</div>
+			   <div style="width:10%;border-left:1px solid #e6d9ce;height:20cm;float:right;position:fixed;right:4%">
+			</div>
+
+    </div>
+  </div>
+  <!--<footer class="page-footer"></footer>-->
+  <script>
+    (function ($) {
+      $(function () {
+
+        function handleSideBar() {
+          var screenWidth = screen.width;
+
+          if (screenWidth <= 900) {
+            $('.button-collapse').show();
+            $('.button-collapse').sideNav();
+            $('.page').css('padding', '10px')
+          } else {
+            $('.button-collapse').hide();
+            $('.page').css('padding', '20mm 30mm 20mm 30mm');
+          }
+        }
+
+        handleSideBar();
+        window.addEventListener('resize', function () {
+          handleSideBar();
+        });
+
+      }); // end of document ready
+    })(jQuery); // end of jQuery name space
+  </script>
+</body>
+
+</html>

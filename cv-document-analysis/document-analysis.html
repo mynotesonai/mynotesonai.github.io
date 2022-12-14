@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-  <title>My Notes on AI</title>
+  <title>My Notes on AI - Document Analysis</title>
 
   <!-- CSS  -->
   <link rel="stylesheet" href="https://fast.fonts.net/cssapi/0340becf-de91-4caa-9bd5-90b2ef07bbd3.css" />
@@ -23,7 +23,6 @@
         });
     </script>
 </head>
-
 <body>
   <div class="fullscreen">
     <nav class="white" role="navigation" style="position:fixed;top:0px;z-index:1000;border-bottom:1px solid #e6d9ce;">
@@ -53,93 +52,68 @@
     <div class="container" style="position:relative;top:56px;">
 			<div style="height:100%;float:left;padding:0px;margin:0px">
 				<div class="page">
-            <p class="topic-name" style="font-weight: 500">Data wrangling using pandas and numpy</p>
-    				<h5 class="section-title-2">Introduction</h5>
+            <p class="topic-name" style="font-weight: 500">Document Analysis and Recognition</p>
             <p class="para-content">
-              According to World Health Organization (WHO), cardiovascular diseases (CVDs) are the number 1 cause of death globally, taking an estimated 17.9 million lives
-              each year and affecting the quality of life of a large number of people worldwide. Prerequisites of the treatment of these types of disease involve proper diagnosis
-              method to identify its occurrence and its type. Diagnosis of such diseases involve in-depth analysis of a large number of parameters. In this demo Pandas and Numpy is used for analysing one
-              such dataset called <b>A1_heart_disease_dataset</b>
+              Document analysis and recognition aims to convert document images from image-based
+              form to text-based form which enables many functionalities such as content retrieval,
+              content searching and indexing, document compression, etc. A general framework of document
+              analysis and recognition is presented in the following figure.
             </p>
-
-            <h5 class="section-title-2">Pandas</h5>
-            <p class="para-content">Pandas is a widely used, robust and flexible open source tool for data analysis and manipulation. Pandas is used for exploratory data analysis, and drawing conclusions from data.
-            The fundamental of data analysis contains 4 steps, <b>Data Collection</b>, <b>Data Wrangling</b>, <b>Exploratory Data Analysis (EDA)</b>, and <b>Drawing Conclusions</b>.</p>
-            <p class="para-content">Pandas dundamental datastructures are DataFrame, Series and Index. It is also possible to use numpy arrays with pandas for short CSVs.</p>
-            <p class="para-content">Pandas is a widely used, robust and flexible open source tool for data analysis and manipulation.
-              Pandas is used for exploratory data analysis, and drawing conclusions from data.
-              The fundamental of data analysis contains 4 steps, <b>Data Collection</b>, <b>Data Wrangling</b>,
-              <b>Exploratory Data Analysis (EDA)</b>, and <b>Drawing Conclusions</b>.</p>
-            <p>Pandas dundamental datastructures are DataFrame, Series and Index. It is also possible to use numpy
-              arrays with pandas for short CSVs.</p>
-
-            <h5 class="section-title-2">Numpy</h5>
-            <p>NumPy builds on (and is a successor to) the successful Numeric array object. Its
-              goal is to create the corner-stone for a useful environment for scientific computing.
-              Numpy provides two fundamental objects, an N-dimensional array object
-              (ndarray) and a universal function object (ufunc).
-            </p>
-            <!-- <div class="row">
-              <div class="col col-xxl-8">
-                <div class="boxed p-3">
-                  <img src="../../assets/images/np_lin_alg.png" />
-                </div>
-              </div>
-            </div>
-            <p>Numpy Broadcast</p>
-            <div class="row">
-              <div class="col col-xxl-8">
-                <div class="boxed p-3">
-                  <img src="../../assets/images/numpy_broadcast.png" />
-                </div>
-              </div>
-            </div> -->
 
             <div class="row">
               <div class="col col-xxl-8">
                 <div class="boxed p-3">
-                  <img src="../images/dataframe.png"/>
+                  <img src="../images/doc_ana_flow.png" width="60%"/>
                 </div>
               </div>
             </div>
 
+            <p class="para-content">
+              Document Analysis and Recognition is one of the foundational services towards building
+              Enterprise Knowledge Repository and Document Archive system. In this task I have studied
+              various image processing techniques, extremely crucial for the successful execution of Optical
+              Character Recognition system, and learned to create a image processing pipeline that feeds
+              the transformed image data to Tesseract system, to extract text from images and digitize
+              them.
+            </p>
+
+            <h5 class="section-title-2">Document Image Skewness Detection</h5>
+            <p class="para-content">Document Image Skewness detection is an important part of image data pre-processing
+              pipeline before feeding the data to the OCR, that enables the accuracy of the OCR output.
+              Haugh Transform is a technique that helps skew detection in the document images. Hough
+              transform transforms angles from the xy coordinate system to the polar coordinate system
+              to identify line locations.
+            </p>
+
+            <p class="para-content">
+              This task focuses on investigating the problem of Document Skew estimation applying the Hough
+              Transform. The document image is first loaded and binarised using some prefixed threshold
+              value, getting the negative version of the image, extracting connected components from the neagtive
+              image and select the candidate points on the negative image using one of the following strategies.
+              Then all the pixels that are not the candidate points are removed from the negative image and
+              Hough transform on the negative image. This will return all the angles detected from the
+              Hough transform. In the last step the image is deskewed with the angles calculated in the step 9
+            </p>
+
+            <h5 class="section-title-2">Text Recognition using pytesseract</h5>
+            <p class="para-content">
+              pytesseract is a python wrapper of Google Tesseract-OCR.
+              This library can be used to extract text regions from an image and recognise them
+              in different languages. You can find more details of this library
+              at https://pypi.org/project/pytesseract/
+            </p>
+            <p class="para-content">
+              In this task I have created an entire document recognition system that takes a that takes input as a document image, deskews
+              the input document, recognises its text, and returns a pdf of the input document.
+            </p>
             <p class="para-content"><a href="https://github.com/mynotesonai/mynotesonai.github.io/blob/main/data_wrangling_and_complex_manipulation.ipynb" class="read-more-link">Link to Notebook</a></p>
         </div>
-
-        <!-- <div class="content-list">
-          <p class="list-with-top-margin" style="font-weight: 500">
-          <h4 class="section-title-2">Surface Integrals</h4></p>
-          <p class="para-content">
-          Surface Integrals.
-          </p>
-        </div> -->
-
-      <div class="page">
-        <div class="row">
-          <div class="col col-xxl-8">
-            <div class="boxed p-3">
-              <img src="../images/missing-data.png"/>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="page">
-        <div class="row">
-          <div class="col col-xxl-8">
-            <div class="boxed p-3">
-              <img src="../images/missing-data.png"/>
-            </div>
-          </div>
-        </div>
-      </div>
    </div>
   </div>
   <!--<footer class="page-footer"></footer>-->
   <script>
     (function ($) {
       $(function () {
-
         function handleSideBar() {
           var screenWidth = screen.width;
 
@@ -156,10 +130,8 @@
         window.addEventListener('resize', function () {
           handleSideBar();
         });
-
       }); // end of document ready
     })(jQuery); // end of jQuery name space
   </script>
 </body>
-
 </html>

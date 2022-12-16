@@ -1,0 +1,427 @@
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>My Notes on AI - Document Analysis</title>
+
+  <!-- CSS  -->
+  <link rel="stylesheet" href="https://fast.fonts.net/cssapi/0340becf-de91-4caa-9bd5-90b2ef07bbd3.css" />
+  <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+  <!--  Scripts-->
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/materialize.js"></script>
+  <script src="../js/init.js"></script>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+  <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+          // "HTML-CSS" : {
+          //     availableFonts : ["STIX"],
+          //     preferredFont : "STIX",
+          //     webFont : "STIX-Web",
+          //     imageFont : null;
+          // }
+        });
+    </script>
+
+</head>
+<body>
+  <div class="fullscreen">
+    <nav class="white" role="navigation" style="position:fixed;top:0px;z-index:1000;border-bottom:1px solid #e6d9ce;">
+      <div class="container">
+        <div class="nav-wrapper">
+          <ul class="right">
+            <li><a href="#"></a></li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav fixed">
+            <li><a href="../index.html">Home</a></li>
+				    <li style="padding-bottom:15px"><a href="../linear-algebra-content-list.html"><span style="line-height:25px">Linear Algebra using<br>Math Expressions and Numpy</span></a></li>
+            <li style="padding-bottom:15px"><a href="../multivariable-calc-content-list.html"><span style="line-height:25px">Multivariable<br>Calculus and Automatic Differentiation</span></a></li>
+				    <li style="padding-bottom:15px"><a href="../ml-content-list.html"><span style="line-height:25px">Machine Learning with scikit-learn (Supervised, Unsupervised, and Ensemble Learning)</span></a></li>
+				    <li style="padding-bottom:15px"><a href="../dl-content-list.html"><span style="line-height:25px">Deep Learning with CNN, RNN &amp; LSTM</span></a></li>
+				    <li style="padding-bottom:15px"><a href="../cv-content-list.html"><span style="line-height:25px">Computer Vision for Image recognition and OCR</span></a></li>
+						<li style="padding-bottom:15px"><a href="../nlp-content-list.html"><span style="line-height:25px">Natural Language<br>Processing with Transformers</span></a></li>
+						<li><a href="ml-ops-content-list.html"><span style="line-height:25px">ML-Ops<br>Deploying Models to Production</span></a></li>
+          </ul>
+          <a href="#" data-activates="nav-mobile" class="button-collapse">
+            <i class="mdi-navigation-menu brand-text-color"></i>
+          </a>
+          <a id="logo-container" href="#" class="navigationactionbarcontentscreentitle brand-text-color"><div style="float:left;"><img src="../images/notes-icon-4.svg" width="60" height="60"></div><div style="float:left;margin-left:10px;">My Notes on AI</div></a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container" style="position:relative;top:56px;">
+			<div style="height:100%;float:left;padding:0px;margin:0px">
+				<div class="page">
+            <p class="topic-name" style="font-weight: 500">Vision Transformer</p>
+            <p class="para-content">
+              Transformer is a deep learning-based model that was developed for Machine Translation using self-attention mechanism and has a huge application in the field of Natural Language Processing. Transformers mark a paradigm shift from the traditional sequence to sequence models and is based on one of the most significant innovations in deep learning research, which is called Attention. Transformer model was first introduced in the paper called Attention is All You Need [1] published by Google Research in 2017. The concept of Attention Mechanism aims to mimic the traits of human perceptions. The idea of Attention mechanism first appeared in a 2014 research paper called Neural Machine Translation by Jointly learning align and translate [2]. Another paper called Recurrent Models of Visual Attention [3] emphasizes that human perception does not process the scene in its entirety, but it focuses on fragments of a visual space. Human brain does not process a visual snapshot all at once. Attention came out of the aim to attend to most important parts in the image.  Attention mechanism is the core of the transformer model.
+            </p>
+            <p class="para-content">
+              Before delving into the general Transformer architecture and the features, architecture, input processing of its Vision Transformer [4] variant, following is an exploration of the concepts of Attention and Self Attention mechanism.
+            </p>
+            <h5 class="section-title-3">Attention Mechanism</h5>
+            <p class="para-content">
+              The Attention mechanism allows a network to assign different weights or attention to each element in an input sequence. The attention mechanism forms an integral component of modelling dependencies in various parts of an input and output sequence, regardless of their distance in the input and output sequence. An attention model enables a learner to better understand the context of an input. A certain input items attendance to another item signifies the presence of a relation between the two. These items form a part of the contextual information of the input item. Attention mechanism was used for the neural translation use case, and it can be described as a mapping between a query, a key-value pairs, and an output. The queries, keys and values are all represented as embedding vectors. A compatibility function calculates an alignment score between the input query and a weight is assigned to each value based on the compatibility function score.
+            </p>
+            <p>
+              The main objective of self-attention is to use the whole sequence is to compute a weighted average of each embedding.
+            </p>
+
+            <h5 class="section-title-3">Scaled Dot Product Attention</h5>
+            <p class="para-content">
+              The scaled dot product computation algorithm receives inputs as queries and keys of dimension dk   and values of dv the query and the key vectors are used to calculate the compatibility score that describes how well the queries and keys match. These alignment scores are then turned into weights used for weighted sum of the value vectors. This weighted sum of the value vectors is returned as the attention vector. The process is performed by scaled dot product attention. The queries are accumulated in a matrix Q, so attention can be computed simultaneously for each query.
+            </p>
+            <p class="para-content">
+              Following is the computation model and steps for calculating the scaled dot product attention. The attention layer outputs the context vectors for each query.
+              The context vectors are weighted sums of the values where the similarity between the queries and keys determines the weights assigned to each value.
+                $$ Attention(Q, K, V) = softmax(\frac{QK^{T}}{\sqrt{d_K}})$$
+            </p>
+        </div>
+        <div class="page">
+          <p class="para-content">
+            1. The key value matrices are created by stacking the embeddings for each word in an input sequence. The queries and the transpose of keys matrices are multiplied together to get a matrix alignment score <br>
+            2. These are then scaled by the square root of the dimension of the key vector.<br>
+            3. The scaled score are converted to weights using the softmax function to get the probabilities as the output<br>
+            4. The weights and the value matrices are multiplied to get the attention vectors for each query.
+            When the softmax output is multiplied with V (the value matrix) we get a
+            linear combination of the initial input Multiplying SoftMax output with V is a
+            linear combination, which is passed to the decoder.<br>
+          </p>
+          <!-- <section id="section-4">
+            <h5 class="section-title-6">steps for calculating the scaled dot product attention</h5>
+            <div class="row">
+                  <table class="table">
+                    <tbody>
+                      <tr>
+                        <td>Matrix Multiplication</td>
+                        <td>Scaling</td>
+                      </tr>
+                      <tr>
+                        <td><img src="../images/vit-mat-mul.png"</td>
+                        <td><img src="../images/vit-scaling.png"</td>
+                      </tr>
+                      <tr>
+                        <td>Apply softmax</td>
+                        <td>Attention Vector for each query</td>
+                      </tr>
+                      <tr>
+                        <td><img src="../images/vit-softmax.png"</td>
+                        <td><img src="../images/vit-attn.png"</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+          </section> -->
+            <h5 class="section-title-6">steps for calculating the scaled dot product attention</h5>
+            <div class="row">
+                  <table class="table">
+                    <tbody>
+                      <tr>
+                        <td><img src="../images/attention.png"</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            <h5 class="section-title-4">Self-Attention: - Encoding the second Item in the input Sequence</h5>
+            <p class="para-content">
+              The input items are all embedded first. The embeddings are scored against each other. In this stage the input item being encoded is compared and scored with other input sequences. The score is then scaled with the square root of the inverse of the dimension of the keys.
+
+            </p>
+            <p class="para-content">
+              A softmax function is applied on the outcomes and the softmax score is multiplied with the embedding of the current input item to get the level of expressions of each of these vectors. These vectors are then added together to construct the self-attention context vector. In this process the input vector is attending to all other items in the input sequence.
+            </p>
+            <p class="para-content">
+              A schematic diagram of the process of encoding the second word by comparing it with the other words in the input sequence is shown below.
+            </p>
+
+         </div>
+         <div class="page">
+           <div class="row">
+                 <table class="table">
+                   <tbody>
+                     <tr>
+                       <td style="text-align: center; vertical-align: middle;"><img src="../images/self-attention-context-vector-1.png" width="66%"></td>
+                     </tr>
+                   </tbody>
+                 </table>
+           </div>
+           <p class="para-content">
+             A query for each embedding is constructed by multiplying the embedding vectors with a query layer by a query matrix. Here the queries are passed through a feed forward neural the keys are created by using a similar process.
+          </p>
+           <div class="row">
+                 <table class="table">
+                   <tbody>
+                     <tr>
+                       <td style="text-align: center; vertical-align: middle;"><img src="../images/vit_self_attention_2.png" width="66%"></td>
+                     </tr>
+                   </tbody>
+                 </table>
+           </div>
+          </div>
+          <div class="page">
+
+             <h5 class="section-title-4">Multi-Head Attention</h5>
+             <p class="para-content">
+               In Multihead self-attention mechanism each head uses different linear transformation to represent different relationships and associativity between input tokens. The scaled dot product attention is calculated by using the query, key, and values matrices that are generated from the word embeddings. In MultiHead attention the attention mechanism is applied parallelly to multiple copies or sets of these queries, keys, and values matrices generated from the embeddings. In the transformer model, different representations are constructed by linearly transforming the original embeddings of the query, key, and value matrices for each head in the model. Each head can learn different relationships between input tokens and come up with different weight vectors. The fact that multiple heads apply the attention mechanism at the same time to multiple sets of these matrices saves computation time as well. The number of heads determines the number of sets of these matrices are needed to perform a successful MultiHead operations. The attention scores computed by each head are horizontally merged
+             </p>
+             <h5 class="section-title-4">Computation of weight matrices using Multi heads</h5>
+             <p class="para-content">
+               1.	The input to the Multi_Head attention block is the query, key, and value matrices. Each type of matrices has the number of sets equal to the number of heads in the Multi-Head block.
+               2.	Apply scaled dot attention mechanisms to every set of keys, queries, and values.
+               3.	Concatenate each head into a single matrix
+               4.	Lastly, another transformation happens to get the output context vectors.
+             </p>
+             <div class="row">
+                   <table class="table">
+                     <tbody>
+                       <tr>
+                         <td style="text-align: center; vertical-align: middle;"><img src="../images/vit-multi-head-calc.png" width="90%"></td>
+                       </tr>
+                     </tbody>
+                   </table>
+             </div>
+             <p class="para-content">
+               Following diagram shows an example of the matrix multiplications executed to compute a merged attention vector. The example below has two heads and the number of columns in the input parameters
+               (query, key, and value) are the dimensions of the embedding vectors. The number of rows is the number of tokens in a sequence. If the embedding vector has dim (3) and we have 3 tokens in a sequence,
+               then the dimensions of the inputs will be 3 x 3 for all the matrices. The input matrices are transformed by a linear transformation by multiplying with 3 x 2 matrices. These weight matrices give
+               us different representations for each head and the key components for the parallel attention computation process. After the scaled dot product computation each head returns an attention matrix
+               of dimension 3 x 2 for this scenario. This is equal to the dim (query or value) / number of heads.
+             </p>
+
+          </div>
+          <div class="page">
+            <div class="row">
+                  <table class="table">
+                    <tbody>
+                      <tr>
+                        <td style="text-align: center; vertical-align: middle;"><img src="../images/vit-transformation-dimension.png" width="90%"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            <p class="para-content">
+              The dimensions of the embeddings and the query size or value size (query dim == value dim)
+              are the two hyperparameters that can be tuned during the training process.
+            </p>
+            <h5 class="section-title-4">Transformer Model</h5>
+             <p class="para-content">
+               The traditional transformer model consists of an encoder and decoder.
+               The encoder converts the input tokens into embedding vectors and inputs the
+               embeddings into the transformer model. The decoder takes the attention vectors
+               calculated by the encoder and generates output sequence of tokens.
+               The input is then passed to the stack of encoders. Encoders output is fed into
+               the stacks of decoders which generates the output, which is the next token
+               in the sequence. We can use standalone encoders and decoders for specific use cases.
+               For example, the Vision Transformer uses only encoder-based architectures.
+             </p>
+             <h5 class="section-title-4">Architecture</h5>
+             <p class="para-content">
+             The Encoder component in the transformer architecture starts with a MultiHead Attention Layer.
+             In the MultiHead attention layer the linear transformations are learnable parameters.
+             The MultiHead attention layer performs self-attention on the input sequence, each item
+             (word or an image patch) attends to every other item in the input sequence. This is followed
+             by a residual connection and normalization, a feed forward layer, and another residual connection
+             and normalization. The encoder provides contextual representations of each of the input items.
+             Like the encoder layer the decoder architecture comprises Masked MultiHead attention layer,
+             Residual layers, and Normalization blocks. The first attention module is masked so that each position
+             attends only to the previous position. The second attention layer takes the encoder output and
+             allows the decoder to attend to all the items. The decoder layer comprises stack of decoders.
+             </p>
+          </div>
+          <div class="page">
+            <div class="row">
+                  <table class="table">
+                    <tbody>
+                      <tr>
+                        <td style="text-align: center; vertical-align: middle;"><img src="../images/vit_core_transformer_architecture.png" width="50%"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            <h5 class="section-title-4">Vision Transformer</h5>
+            <p class="para-content">
+              Vision Transformers are the new state of the art deep learning models that marks a
+              new advancement in the field of computer vision. The idea of Vit is first introduced
+              in the paper <a href="">An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale [4]</a> paper.
+              This paper introduced a transformer-based vision framework that applies the self-attention mechanism
+              to perform image classification. The paper claims that large scale training with vision transformers
+              can remove inductive biases, which is very common to appear in CNN based architectures.
+            </p>
+            <div class="row">
+                  <table class="table">
+                    <tbody>
+                      <tr>
+                        <td style="text-align: center; vertical-align: middle;"><img src="../images/vit-transformer-architecture.png" width="90%"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            <p class="para-content">
+              A vision transformer uses a transformer encoder as the feature extractor, and a multilayer perceptron that
+              receives the processed features from the encoder and performs the classification.
+            </p>
+            <p class="para-content">
+              One of the key challenges of making an image an input to a self-attention-based network is the size of an image. It becomes computationally infeasible
+              if every pixel in a 224x224 image attends to all the other pixels in the transformer model.
+            </p>
+          </div>
+          <div class="page">
+            <p class="para-content">
+              The resulting attention matrix would be 224x224 in dimension. As a solution the input image is divided into patches and a linear embedding is provided on these patches.
+              The embeddings are the input to the network. Image patches are analogous to the word tokens used in the NLP Transformers. Following are the steps for tokenizing an image
+              that becomes the input to the Vision Transformer model
+            </p>
+            <p class="para-content">
+              1. Split an image into a grid of sub-image patches.<br>
+              2. Embed each patch with a linear projection.<br>
+              3. Each embedded patch is treated as a token and becomes the input for
+              the vision transformer model.
+            </p>
+            <h5 class="section-title-4">Input Processing</h5>
+            <p class="para-content">
+              Since the standard transformer input is a sequence of token embeddings, the 3D image is reshaped into a sequence of flattened 2D patches.
+              Following figure shows the input reshaping process.
+            </p>
+            <p class="para-content">
+              The original shape of the image is calculated using Height, width and the number of colour channels present in the image
+            </p>
+            $$ \large{inputX_{original \ image} \in {\mathbb{R}^{height \times width \times channels}}} $$
+            <p class="para-content">
+              The image then gets reshaped into the following form</p>
+            $$ \large{inputX_{flattened \ 2D \ pathches } \in {\mathbb{R}^{number \ of \ pathches \times ((patch \ resolutuon^2) \times channel)}}} $$
+
+            <p class="para-content">
+              Resulting number of patches created by the following process
+            </p>
+            $$ \large{inputX_{resulting \ number \ of \ pathches } = \frac{image \ height \times image \ width} {(patch \ resolution)^2}} $$
+
+            <p class="para-content">
+              The patches resulting from one image constructs a sentence of image patch. Since P2C is a higher dimension, a linear transformation is applied to bring the result to a lower dimension by multiplying this with a matrix. This transformation matrix maps P2C
+              to a lower dimension D and is referred to as a trainable linear projection. The output of this projection is called patch embeddings.
+            </p>
+            <div class="row">
+                  <table class="table">
+                    <tbody>
+                      <tr>
+                        <td style="text-align: center; vertical-align: middle;"><img src="../images/vit_ln_embeddings.png" width="70%"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+          </div>
+          <div class="page">
+            <p class="para-content">
+              In Transformer architecture the order of encodings is not preserved naturally since the inputs are passed in one shot, unlike RNNs or LSTMs. The Transformer paper (Attention is All You Need [1])
+              recommends introduction of Positional Embeddings to retain the order of input sequences. Positional embeddings are added to the patch embeddings to retrain the positional information.
+            </p>
+            <div class="row">
+                  <table class="table">
+                    <tbody>
+                      <tr>
+                        <td style="text-align: center; vertical-align: middle;"><img src="../images/vit-pos-embedding.png" width="70%"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            <h5 class="section-title-4">Vision Transformer Architecture</h5>
+            <p class="para-content">
+              This concatenated matrix of positional embeddings and patch projections is passed to the Vision Transformer
+              encoder as the input. Vision Transformer encoder consists of MultiHead self-attention layers for feature
+              extraction, an MLP head for image classifications. Layer normalization is applied before both the
+              MSA and MLP blocks. A residual connection is applied after each block.
+            </p>
+            <div class="row">
+                  <table class="table">
+                    <tbody>
+                      <tr>
+                        <td style="text-align: center; vertical-align: middle;"><img src="../images/vit-archirecture-vertical.png" width="35%"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+          </div>
+          <div class="page">
+            <p class="para-content">Following are the computation steps involved in this process.
+              The patches vectors are concatenated with the position embedding vectors first.
+            </p>
+            $$ \Large{ z_0 = [x_{class}; x^{1}_pE;x^{2}_pE;.....;x^{N}_pE] + E_{pos}}$$
+            $$ \Large{\  E \in \mathbb{R^{(P^{2}C)\times{D}}}, \  E_{pos} \in \mathbb{R^{(N+1)\times{D}}}} $$
+            <p class="para-content">
+              The embedded patches along with the position information are passed as inputs to transformer.
+              The Transformer encoder’s MLP contains two layers followed by Gelu non-linearity.
+              The input first passes through the MSA layer, where the attention matrix is calculated.
+              The GELU nonlinearity weights inputs by their value, rather than gates inputs by their sign.
+            </p>
+            $$ \Large{Z'_l = MSA(LN(z_{l-1})) + z_{l-1}, \ l = 1....L }$$
+            <p class="para-content">
+              The output from the attention layer is passed to the MLP layer and the output of the MLP layer
+              contains the output sequence returned from the Transformer. The first element in the output
+              sequence contains the class of the input image.
+            </p>
+            $$ \Large{Z'_l = MLP(LN(z'_{l-1})) + z'_{l}, \ l = 1....L }$$
+            $$ \Large{y = LN(z^{0}_L) }$$
+            <h5 class="section-title-4">Advantages of using a Vision Transformer over CNN</h5>
+            <p class="para-content">
+              Vision Transformers contain less image specific inductive bias than CNNs and performs better than ResNets
+              on huge volume of data. CNNs are more suitable for small and medium sized datasets.
+            </p>
+            <h5 class="section-title-4">My Experiments – Finetuning the Vision Transformer</h5>
+            <p class="para-content">
+              I have finetuned the pretrained vision transformer model google/vit-base-patch16-224-in21k.
+              on a custom dataset for plastic container shape detection use case. I have collected the dataset
+              from different online grocery shopping websites of Coles, Woolworths, Bunnings, BigW and google image.
+              search. There are 780 images used for training and 30 images used for testing.
+              The task is a supervised classification task and the class labels are bottles, cans and sprays.
+            </p>
+            <p class="para-content">
+              I have created a model that is composed of the vit-base-patch16-224-in21k and a Linear layer for classification.
+              After training for 5 epochs the recognition accuracy has reached 80%. I think this is a good performance
+              because the test data is gathered from a different source. Following are the performance evaluation result of the model.
+            </p>
+            <h5 class="section-title-4">Conclusion</h5>
+            <p class="para-content">
+              This Paper applies Transformers to image recognition. It does not introduce image-specific inductive biases
+              into the architecture apart from the initial patch extraction step. Instead, an image is interpreted
+              as a sequence of patches and processed using a standard Transformer encoder as used in NLP.
+              This strategy worked well when coupled with pre-training on large datasets. However,
+              Transformers aren’t mainstream yet as their operations are compute-heavy, training takes long even
+              on good hardware, and the final trained model is too large to host on smaller servers
+              without severe latency issues during inference. Also, the Vision Transformer performed well
+              when pre-trained on a large Google Brain’s proprietary JFT-300M dataset.
+            </p>
+          </div>
+      </div>
+
+  </div>
+  <!--<footer class="page-footer"></footer>-->
+  <script>
+    (function ($) {
+      $(function () {
+        function handleSideBar() {
+          var screenWidth = screen.width;
+
+          if (screenWidth <= 900) {
+            $('.button-collapse').show();
+            $('.button-collapse').sideNav();
+            $('.page').css('padding', '10px')
+          } else {
+            $('.button-collapse').hide();
+            $('.page').css('padding', '20mm 30mm 20mm 30mm');
+          }
+        }
+        handleSideBar();
+        window.addEventListener('resize', function () {
+          handleSideBar();
+        });
+      }); // end of document ready
+    })(jQuery); // end of jQuery name space
+  </script>
+</body>
+</html>

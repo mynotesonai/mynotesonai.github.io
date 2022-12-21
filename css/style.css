@@ -236,6 +236,23 @@ footer.page-footer {
 	font-size: 1.875rem;
 }
 
+.section-title-3 {
+	font-family: "Muli", sans-serif;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #000;
+	font-size: 1.5rem;
+}
+
+.section-title-4 {
+	font-family: "Muli", sans-serif;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #000;
+	font-size: 1.2rem;
+}
+
+
 .para-content {
 	font-family: "Open Sans", sans-serif;
   font-size: 1.1rem;

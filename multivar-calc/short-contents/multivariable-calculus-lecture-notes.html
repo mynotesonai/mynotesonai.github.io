@@ -1,0 +1,463 @@
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>My Notes on AI</title>
+
+  <!-- CSS  -->
+  <link rel="stylesheet" href="https://fast.fonts.net/cssapi/0340becf-de91-4caa-9bd5-90b2ef07bbd3.css" />
+  <link href="../../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="../../css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+  <!--  Scripts-->
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/materialize.js"></script>
+  <script src="../../js/init.js"></script>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+  <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+        });
+    </script>
+</head>
+
+<body>
+  <div class="fullscreen">
+
+    <nav class="white" role="navigation" style="position:fixed;top:0px;z-index:1000;border-bottom:1px solid #e6d9ce;">
+      <div class="container">
+        <div class="nav-wrapper">
+
+          <ul class="right">
+            <li><a href="#"></a></li>
+          </ul>
+
+          <ul id="nav-mobile" class="side-nav fixed">
+            <li><a href="../../index.html">Home</a></li>
+				    <li style="padding-bottom:15px"><a href="../../linear-algebra-content-list.html"><span style="line-height:25px">Linear Algebra using<br>Math Expressions and Numpy</span></a></li>
+            <li style="padding-bottom:15px"><a href="../../multivariable-calc-content-list.html"><span style="line-height:25px">Multivariable<br>Calculus and Automatic Differentiation</span></a></li>
+				    <li style="padding-bottom:15px"><a href="../../ml-content-list.html"><span style="line-height:25px">Machine Learning with scikit-learn (Supervised, Unsupervised, and Ensemble Learning)</span></a></li>
+				    <li style="padding-bottom:15px"><a href="../../dl-content-list.html"><span style="line-height:25px">Deep Learning with CNN, RNN &amp; LSTM</span></a></li>
+				    <li style="padding-bottom:15px"><a href="../../cv-content-list.html"><span style="line-height:25px">Computer Vision for Image recognition and OCR</span></a></li>
+						<li style="padding-bottom:15px"><a href="../../nlp-content-list.html"><span style="line-height:25px">Natural Language<br>Processing with Transformers</span></a></li>
+						<li><a href="../../ml-ops-content-list.html"><span style="line-height:25px">ML-Ops<br>Deploying Models to Production</span></a></li>
+            <li><a href="../../papers-content-list.html"><span style="line-height:25px">Interesting <br>Research Papers</span></a></li>
+          </ul>
+          <a href="#" data-activates="nav-mobile" class="button-collapse">
+            <i class="mdi-navigation-menu brand-text-color"></i>
+          </a>
+
+          <a id="logo-container" href="#" class="navigationactionbarcontentscreentitle brand-text-color"><div style="float:left;">
+            <img src="../../images/notes-icon-4.svg" width="60" height="60"></div>
+            <div style="float:left;margin-left:10px;">My Notes on AI</div></a>
+
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="container" style="position:relative;top:56px;">
+			<div style="height:100%;float:left;padding:0px;margin:0px">
+
+        <div class="content-list">
+            <p class="list-topic-name" style="font-weight: 500">List of Topics</p>
+            <h4 class="section-title-3">Overview</h4>
+            <p class="para-content"><b>Calculus</b> is a branch of Mathematics that deals with an instantaneous rate of change and
+              the integration of many small factors to understand some whole.Multivariable Calculus deals with the idea of
+            understading the instanteous rate of change in three diamensional or multi dimensional space.</p>
+
+            <h4 class="section-title-3">Length, Dot Product, Cross Product</h4>
+            <p class="para-content">
+              Length, Dot Product, Cross Product.
+            </p>
+            <a href="./vector-length-dot-cross-product.html" class="read-more-link">Read More</a>
+
+            <h4 class="section-title-3">Linear Functions, Lines and Planes</h4>
+            <p class="para-content">
+              Linear Functions, Lines and Planes.
+            </p>
+            <a href="./linear-functions-lines-planes.html" class="read-more-link">Read More</a>
+
+            <h4 class="section-title-3">Quadratic Surfaces</h4>
+            <p class="para-content">
+              Quadratic Surfaces.
+            </p>
+            <a href="./quadratic-surfaces.html" class="read-more-link">Read More</a>
+
+            <h4 class="section-title-3">Vector-Valued Functions</h4>
+            <p class="para-content">
+              Vector-Valued Functions.
+            </p>
+            <a href="./vector-valued-functions.html" class="read-more-link">Read More</a>
+
+            <h4 class="section-title-3">Integration of Vector-Valued Functions, Arc Length</h4>
+            <p class="para-content">
+              Integration of Vector-Valued Functions, Arc Length.
+            </p>
+            <a href="./integration-vector-valued-func.html" class="read-more-link">Read More</a>
+
+            <h4 class="section-title-3">Unit Tangent and Normal Vectors</h4>
+            <p class="para-content">
+              Unit Tangent and Normal Vectors.
+            </p>
+            <a href="./unit-tangent-normal-vectors.html" class="read-more-link">Read More</a>
+
+            <h4 class="section-title-3">Curvature</h4>
+            <p class="para-content">
+              Curvature.
+            </p>
+            <a href="./curvature.html" class="read-more-link">Read More</a>
+
+            <h4 class="section-title-3">Multivariable Functions, Limits, Continuity, and Partial Derivatives</h4>
+            <p class="para-content">
+              Multivariable Functions.
+            </p>
+            <a href="./multivariable-functions.html" class="read-more-link">Read More</a>
+
+            <h4 class="section-title-3">Multivariable Taylor Formula, Parametric Problems</h4>
+            <p class="para-content">
+              Multivariable Functions.
+            </p>
+            <a href="./multivariable-taylor-formula.html" class="read-more-link">Read More</a>
+        </div>
+        <div class="content-list">
+            <!-- <p class="list-with-top-margin" style="font-weight: 500">
+              <h4 class="section-title-3">Limits and Continuity</h4>
+            </p>
+            <p class="para-content">
+              Limit is the notion of approaching something, some point or entity but never quite reaching that.
+            </p>
+            <a href="./multivariable-functions.html" class="read-more-link">Read More</a>
+
+
+            <h4 class="section-title-3">Differentiability of Two Variable Functions</h4>
+            <p class="para-content">
+              Differentiability of Two Variable Functions.
+            </p>
+            <a href="./multivariable-functions.html" class="read-more-link">Read More</a>
+
+            <h4 class="section-title-3">Partial Derivatives</h4>
+            <p class="para-content">
+              Partial Derivatives.
+            </p>
+            <a href="./derivatives.html" class="read-more-link">Read More</a>
+
+            <h4 class="section-title-3">Tangent Planes and Total Differentials</h4>
+            <p class="para-content">
+              Tangent Planes and Total Differentials.
+            </p>
+            <a href="coming-soon.html" class="read-more-link">Read More</a>
+
+            <h4 class="section-title-3">Directional Derivatives and Gradients</h4>
+            <p class="para-content">
+              Directional Derivatives and Gradients.
+            </p>
+            <a href="coming-soon.html" class="read-more-link">Read More</a>
+
+            <h4 class="section-title-3">Functions of Three and n variables</h4>
+            <p class="para-content">
+              Functions of Three and n variables.
+            </p>
+            <a href="coming-soon.html" class="read-more-link">Read More</a> -->
+            <p class="list-with-top-margin" style="font-weight: 500">
+              <h4 class="section-title-3">Maxima and Minima, Extrema over a Given Region</h4>
+            </p>
+            <p class="para-content">
+              Multivariable Taylor Formula and Parametric Problems.
+            </p>
+            <a href="coming-soon.html" class="read-more-link">Read More</a>
+
+            <!-- <h4 class="section-title-3">Parametric Problems</h4>
+            <p class="para-content">
+              Parametric Problems.
+            </p>
+            <a href="coming-soon.html" class="read-more-link">Read More</a> -->
+
+
+            <!-- <h4 class="section-title-3">Extrema over a Given Region</h4>
+            <p class="para-content">
+              Extrema over a Given Region.
+            </p>
+            <a href="coming-soon.html" class="read-more-link">Read More</a> -->
+
+            <h4 class="section-title-3">Lagrange Multipliers</h4></p>
+            <p class="para-content">
+              Lagrange Multipliers.
+            </p>
+            <a href="./multivar-calc/lagrange-multipliers.html" class="read-more-link">Read More</a>
+
+            <h4 class="section-title-3">Double Integrals</h4>
+            <p class="para-content">
+              Double Integrals.
+            </p>
+            <a href="./multivar-calc/double-integrals.html" class="read-more-link">Read More</a>
+
+            <h4 class="section-title-3">Triple Integrals</h4>
+            <p class="para-content">
+              Triple Integrals.
+            </p>
+            <a href="coming-soon.html" class="read-more-link">Read More</a>
+
+            <h4 class="section-title-3">Line Integrals</h4>
+            <p class="para-content">
+              Line Integrals.
+            </p>
+            <a href="coming-soon.html" class="read-more-link">Read More</a>
+
+            <h4 class="section-title-3">Green's Theorem</h4>
+            <p class="para-content">
+              Green's Theorem.
+            </p>
+            <a href="coming-soon.html" class="read-more-link">Read More</a>
+
+            <h4 class="section-title-3">Parametric Surfaces and Areas</h4>
+            <p class="para-content">
+              Parametric surfaces are three dimensional surfaces defined by parametric equations.
+              Parametric equations represents a surface. We can also find a tangent palne to a parametric
+              surface, and the area of the Parametric Surface. Parametric equations are also very helpful
+              when we try to find points on the surface of a vector function by breaking the vector function
+              into parametric equations.
+            </p>
+            <a href="parametric-surfaces-and-areas.html" class="read-more-link">Read More</a>
+
+            <h4 class="section-title-3">Surface Integrals</h4></p>
+            <p class="para-content">
+              Surface Integrals.
+            </p>
+            <a href="surface-integrals.html" class="read-more-link">Read More</a>
+
+            <h4 class="section-title-3">Surface Integrals of Vector Functions</h4>
+            <p class="para-content">
+              Surface Integrals of Vector Functions.
+            </p>
+            <a href="coming-soon.html" class="read-more-link">Read More</a>
+        </div>
+        <div class="content-list">
+          <p class="list-with-top-margin" style="font-weight: 500">
+          <h4 class="section-title-3">The Divergence Theorem</h4></p>
+          <p class="para-content">
+            The Divergence Theorem.
+          </p>
+          <a href="coming-soon.html" class="read-more-link">Read More</a>
+
+          <h4 class="section-title-3">Stokes' Theorem</h4>
+          <p class="para-content">
+            Stokes' Theorem realtes a surface integral over a surface $ S $ to a line integral around the
+            boundary curve of $ S $.
+          </p>
+          <a href="./short-contents/stokes-theorem.html" class="read-more-link">Read More</a>
+
+          <h4 class="section-title-3">Surface Integrals of Vector Functions</h4>
+          <p class="para-content">
+            We obtain the surface area by integrating over the differential area element dA.
+            In 2 dimensional cases, the surface area is flat and lies entirely within the xy plane.
+            Hence we can calulate the differential
+            $$\nabla A = dx \ dy $$
+          </p>
+          <a href="./html/docs/linear_Algebra_home.html" class="read-more-link">Read More</a>
+          <h4 class="section-title-3">The Divergence Theorem</h4>
+            <p class="para-content">
+              The Divergence Theorem.
+            </p>
+            <a href="coming-soon.html" class="read-more-link">Read More</a>
+          <h4 class="section-title-3">Stokes’ Theorem</h4>
+            <p class="para-content">
+              Stokes’ Theorem.
+            </p>
+        </div>
+        <!-- <div class="content-list"> -->
+            <!-- <p class="list-with-top-margin" style="font-weight: 500">
+            <h4 class="section-title-3">Lagrange Multipliers</h4></p>
+            <p class="para-content">
+              Lagrange Multipliers.
+            </p>
+            <a href="./multivar-calc/lagrange-multipliers.html" class="read-more-link">Read More</a>
+
+
+            <h4 class="section-title-3">Double Integrals</h4>
+            <p class="para-content">
+              Double Integrals.
+            </p>
+            <a href="./multivar-calc/double-integrals.html" class="read-more-link">Read More</a>
+
+            <h4 class="section-title-3">Integration of Double Integrals</h4>
+            <p class="para-content">
+              Integration of Double Integrals.
+            </p>
+            <a href="coming-soon.html" class="read-more-link">Read More</a>
+
+            <h4 class="section-title-3">Double Integrals in Polar Coordinates, Surface Area</h4>
+            <p class="para-content">
+              Double Integrals in Polar Coordinates, Surface Area.
+            </p>
+            <a href="coming-soon.html" class="read-more-link">Read More</a> -->
+
+            <!-- <h4 class="section-title-3">Triple Integrals</h4>
+            <p class="para-content">
+              Triple Integrals.
+            </p>
+            <a href="coming-soon.html" class="read-more-link">Read More</a>
+
+            <h4 class="section-title-3">Change of Variables</h4>
+            <p class="para-content">
+              Change of Variables.
+            </p>
+            <a href="coming-soon.html" class="read-more-link">Read More</a>
+
+            <h4 class="section-title-3">Triple Integrals in Cylindrical and Spherical Coordinates</h4>
+            <p class="para-content">
+              Triple Integrals in Cylindrical and Spherical Coordinates.
+            </p>
+            <a href="coming-soon.html" class="read-more-link">Read More</a>
+
+            <h4 class="section-title-3">Line Integrals</h4>
+            <p class="para-content">
+              Line Integrals.
+            </p>
+            <a href="coming-soon.html" class="read-more-link">Read More</a>
+
+            <h4 class="section-title-3">Line Integrals independent of Path</h4>
+            <p class="para-content">
+              Line Integrals independent of Path.
+            </p>
+            <a href="coming-soon.html" class="read-more-link">Read More</a> -->
+
+            <!-- <h4 class="section-title-3">Green's Theorem</h4>
+            <p class="para-content">
+              Green's Theorem.
+            </p>
+            <a href="coming-soon.html" class="read-more-link">Read More</a> -->
+        <!-- </div> -->
+
+        <div class="content-list">
+            <!-- <p class="list-with-top-margin" style="font-weight: 500">
+            <h4 class="section-title-3">Parametric Surfaces and Areas</h4></p>
+            <p class="para-content">
+              Parametric surfaces are three dimensional surfaces defined by parametric equations.
+              Parametric equations represents a surface. We can also find a tangent palne to a parametric
+              surface, and the area of the Parametric Surface. Parametric equations are also very helpful
+              when we try to find points on the surface of a vector function by breaking the vector function
+              into parametric equations.
+            </p>
+            <a href="./short-contents/parametric-surfaces-and-areas.html" class="read-more-link">Read More</a>
+
+            <h4 class="section-title-3">Surface Integrals</h4></p>
+            <p class="para-content">
+              Surface Integrals.
+            </p>
+            <a href="./short-contents/surface-integrals.html" class="read-more-link">Read More</a>
+
+            <h4 class="section-title-3">Surface Integrals of Vector Functions</h4>
+            <p class="para-content">
+              Surface Integrals of Vector Functions.
+            </p>
+            <a href="coming-soon.html" class="read-more-link">Read More</a>
+
+            <h4 class="section-title-3">The Divergence Theorem</h4>
+            <p class="para-content">
+              The Divergence Theorem.
+            </p>
+            <a href="coming-soon.html" class="read-more-link">Read More</a>
+
+            <h4 class="section-title-3">Stokes' Theorem</h4>
+            <p class="para-content">
+              Stokes' Theorem realtes a surface integral over a surface $ S $ to a line integral around the
+              boundary curve of $ S $.
+            </p>
+            <a href="./short-contents/stokes-theorem.html" class="read-more-link">Read More</a>
+
+            <h4 class="section-title-3">Applications</h4>
+            <p class="para-content">
+              Applications.
+            </p>
+            <a href="coming-soon.html" class="read-more-link">Read More</a>
+
+            <h4 class="section-title-3">Differentiation, Trancendental Functions and Applications of Differentiation</h4>
+            <p class="para-content">
+              Differentialtion, Trancendental Functions and Applications of Differentiation.
+            </p>
+            <a href="./html/docs/linear_Algebra_home.html" class="read-more-link">Read More</a>
+
+            <h4 class="section-title-3">Integration - Techniques and Applications</h4>
+            <p class="para-content">
+              Building a scalable and resilient hardware architecture to cater to real-time and batch inference requests. This section describes
+              different patterns of model serving patterns and infrastructures.
+            </p>
+            <a href="./html/docs/linear_Algebra_home.html" class="read-more-link">Read More</a>
+
+            <h4 class="section-title-3">Conic Sections, Parametric and Polar Curves</h4>
+            <p class="para-content">
+              Conic Sections, Parametric and Polar Curves.
+            </p>
+            <a href="./html/docs/linear_Algebra_home.html" class="read-more-link">Read More</a>
+
+            <h4 class="section-title-3">Sequences, Series and Power Series</h4>
+            <p class="para-content">
+              Sequences, Series and Power Series. A sequence is an infinite succession of numbers called terms, <thead>
+              order of which is determined by some rule or function.
+              </thead>
+            </p> -->
+            <!-- <a href="./html/docs/linear_Algebra_home.html" class="read-more-link">Read More</a> -->
+        </div>
+
+
+        <!-- <div class="content-list">
+          <p class="list-with-top-margin" style="font-weight: 500">
+          <h4 class="section-title-3">Surface Integrals of Vector Functions</h4></p>
+          <p class="para-content">
+            We obtain the surface area by integrating over the differential area element dA.
+            In 2 dimensional cases, the surface area is flat and lies entirely within the xy plane.
+            Hence we can calulate the differential
+            $$\nabla A = dx \ dy $$
+          </p>
+          <a href="./html/docs/linear_Algebra_home.html" class="read-more-link">Read More</a>
+          <h4 class="section-title-3">The Divergence Theorem</h4>
+            <p class="para-content">
+              The Divergence Theorem.
+            </p>
+            <a href="coming-soon.html" class="read-more-link">Read More</a>
+            <h4 class="section-title-3">Stokes’ Theorem</h4>
+              <p class="para-content">
+                Stokes’ Theorem.
+              </p>
+            <a href="coming-soon.html" class="read-more-link">Read More</a>
+            <h4 class="section-title-3">Applications</h4>
+              <p class="para-content">
+                Applications.
+              </p>
+            <a href="coming-soon.html" class="read-more-link">Read More</a>
+        </div> -->
+
+      </div>
+
+  <!--<footer class="page-footer"></footer>-->
+  <script>
+    (function ($) {
+      $(function () {
+
+        function handleSideBar() {
+          var screenWidth = screen.width;
+
+          if (screenWidth <= 900) {
+            $('.button-collapse').show();
+            $('.button-collapse').sideNav();
+            $('.page').css('padding', '10px')
+          } else {
+            $('.button-collapse').hide();
+            $('.page').css('padding', '20mm 30mm 20mm 30mm');
+          }
+        }
+
+        handleSideBar();
+        window.addEventListener('resize', function () {
+          handleSideBar();
+        });
+      }); // end of document ready
+    })(jQuery); // end of jQuery name space
+  </script>
+</body>
+
+</html>

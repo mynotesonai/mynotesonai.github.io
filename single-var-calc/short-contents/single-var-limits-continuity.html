@@ -1,0 +1,229 @@
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>My Notes on AI</title>
+
+  <!-- CSS  -->
+  <link rel="stylesheet" href="https://fast.fonts.net/cssapi/0340becf-de91-4caa-9bd5-90b2ef07bbd3.css" />
+  <link href="../../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="../../css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+  <!--  Scripts-->
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/materialize.js"></script>
+  <script src="../../js/init.js"></script>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+  <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+        });
+    </script>
+</head>
+
+<body>
+  <div class="fullscreen">
+
+    <nav class="white" role="navigation" style="position:fixed;top:0px;z-index:1000;border-bottom:1px solid #e6d9ce;">
+      <div class="container">
+        <div class="nav-wrapper">
+          <ul class="right">
+            <li><a href="#"></a></li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav fixed">
+            <li><a href="../../index.html">Home</a></li>
+            <li style="padding-bottom:15px"><a href="../../../maths-for-ai/maths-for-ai-index.html"><span style="line-height:25px">Maths for<br>Artificial Intelligence</span></a></li>
+  		      <li style="padding-bottom:15px"><a href="../../../linear-algebra-content-list.html"><span style="line-height:25px">Linear Algebra using<br>Math Expressions and Numpy</span></a></li>
+            <li style="padding-bottom:15px"><a href="../../../single-variable-calc-content-list.html"><span style="line-height:25px">Single Variable Calculus</span></a></li>
+            <li style="padding-bottom:15px"><a href="../../../multivariable-calc-content-list.html"><span style="line-height:25px">Multivariable<br>Calculus and Automatic Differentiation</span></a></li>
+            <li style="padding-bottom:15px"><a href="../../../ml-content-list.html"><span style="line-height:25px">Machine Learning with scikit-learn (Supervised, Unsupervised, and Ensemble Learning)</span></a></li>
+  		      <li style="padding-bottom:15px"><a href="../../../dl-content-list.html"><span style="line-height:25px">Deep Learning with CNN, RNN &amp; LSTM</span></a></li>
+  					<li style="padding-bottom:15px"><a href="../../../cv-content-list.html"><span style="line-height:25px">Computer Vision for Image recognition and OCR</span></a></li>
+  					<li style="padding-bottom:15px"><a href="../../../nlp-content-list.html"><span style="line-height:25px">Natural Language<br>Processing with Transformers</span></a></li>
+            <li style="padding-bottom:15px"><a href="../../../ml-ops-content-list.html"><span style="line-height:25px">ML-Ops<br>Deploying Models to Production</span></a></li>
+            <li style="padding-bottom:15px"><a href="../../../papers-content-list.html"><span style="line-height:25px">Research<br>Paper Analysis</span></a></li>
+          </ul>
+          <a href="#" data-activates="nav-mobile" class="button-collapse">
+            <i class="mdi-navigation-menu brand-text-color"></i>
+          </a>
+          <a id="logo-container" href="#" class="navigationactionbarcontentscreentitle brand-text-color"><div style="float:left;"><img src="../../images/notes-icon-4.svg" width="60" height="60"></div><div style="float:left;margin-left:10px;">My Notes on AI</div></a>
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="container" style="position:relative;top:56px;">
+			<div style="height:100%;float:left;padding:0px;margin:0px">
+				<div class="page">
+              <p class="topic-name" style="font-weight: 500">Limits and Continuity</p>
+              <p class="para-content">
+                The central idea behind the concept of limit is approcahing some point without reaching that point.
+                The reason we want to know limit of a function is because limits allow us to know the value of a
+                function evenif the function is undefined.
+              </p>
+              <p class="para-content">
+                The limit of a function f(x) is the y value the function f(x) approches at a given value
+                of x, regardless of whether the funcion actually reaches that value.
+              </p>
+              <p class="para-content">
+                Consider the function $ f(x) = x + 5 $. When we plug x = 5 into the function
+                we get $ f(x) = 5 + 5 $. Hence 10 is the limit of the function. As the function
+                approaches 5 as the value of x, the value of y gets closer and closer to 10.
+              </p>
+              <p class="para-content">
+                The below function returns an indeterminant form $ \frac{0}{0} $ but if we see the graph of this
+                function we can see that this function is undefined only when $ x = 3 $
+              </p>
+              <p class="para-content">
+                <div class="row">
+                  <div class="col col-xxl-8">
+                    <div class="boxed p-3 img-border">
+                      <img src="../../images/calc1/limit.png"  width="70%"/>
+                    </div>
+                  </div>
+                </div>
+              </p>
+              <p class="para-content">The concept of limit helps us to evaluate the function of indeterminant form</p>
+              <h5 class="section-title-3">Limit Notation</h5>
+              <p class="para-content">
+                $$ \Large{\lim_{x \to 2} f(x) = 5} $$
+              </p>
+              <h5 class="section-title-3">General vs One sided limits</h5>
+              <p class="para-content">
+                In certain scenarios we evaluate the limit when we approach the value from a particular
+                side, that is the left or the right of the function. This is called a one-sided limit.
+              </p>
+              <p class="para-content">
+                <div class="row">
+                  <div class="col col-xxl-8">
+                    <div class="boxed p-3 img-border">
+                      <img src="../../images/calc1/one_sided_limit.png"  width="70%"/>
+                    </div>
+                  </div>
+                </div>
+              </p>
+              <p class="para-content">
+                If f(x) does not approach a specific finite value as x approaches a from both the directions,
+                then we can say that the <b>limit does not exist.</b> We can say that the general limit exists when both the
+                left-hand and the right-hand side limits exist and the value of the left-hand side limit is equal to
+                the right-hand side limit.
+              </p>
+              <p class="para-content">
+                  $$ \large{\lim_{x \to a} f(x) = 5 \ \ \text{if and only if} \ \ \lim_{x \to a^{-}} f(x) = \lim_{x \to a^{+}} f(x)} $$
+              </p>
+
+        </div>
+        <div class="page">
+          <h5 class="section-title-3">Evaluating limits</h5>
+          <p class="para-content">
+            Evaluating limits means pluggin in the value and simplify.
+            $$ \large{\lim_{x \to a} f(x) = f(a)} \\
+
+             \large{\lim_{x \to 4} [x^{2} + 7x - 9] = (4)^{2} + 7(4) - 9 = 35} $$
+          </p>
+          <p class="para-content">
+            However we can get an indeterminant form even after plugging in the value.
+          </p>
+
+          <p class="para-content">
+            <h5 class="section-title-3">Fundamental theorems of limit</h5>
+            <section id="section-4">
+              <div class="row">
+                    <table class="table">
+
+                      <tbody>
+                        <tr>
+                          <td>Sum Law</td>
+                          <td>$$ \lim_{x \to a} f(x) + g(x) = \lim_{x \to a} f(x) +  \lim_{x \to a} g(x) $$</td>
+                        </tr>
+                        <tr>
+                          <td>Difference Law</td>
+                          <td>$$ \lim_{x \to a} f(x) - g(x) = \lim_{x \to a} f(x) -  \lim_{x \to a} g(x) $$</td>
+                        </tr>
+                        <tr>
+                          <td>Constant Multiple Law</td>
+                          <td>$$ \lim_{x \to a} cf(x) = c \ \lim_{x \to a} f(x) $$</td>
+                        </tr>
+                        <tr>
+                          <td>Product Law</td>
+                          <td>$$ \lim_{x \to a} (f(x) . g(x)) = \lim_{x \to a} f(x) . \lim_{x \to a} g(x) $$</td>
+                        </tr>
+                        <tr>
+                          <td>Product Law</td>
+                          <td>$$ \lim_{x \to a} (f(x) \ . \ g(x)) = \lim_{x \to a} f(x) \ . \ \lim_{x \to a} g(x) \ \ \text{if} \ \ \lim_{x \to a} g(x) \neq 0 $$</td>
+                        </tr>
+                        <tr>
+                          <td>Power Law</td>
+                          <td>$$ \lim_{x \to a} (f(x))^{n}) = \frac{\lim_{x \to a} f(x)}{\lim_{x \to a} g(x)}  \ \ \text{if} \ \ \lim_{x \to a} g(x) \neq 0 $$</td>
+                        </tr>
+                        <tr>
+                          <td>Root Law</td>
+                          <td>$$ \lim_{x \to a} \sqrt[n]{f(x)} = \sqrt[n]{\lim_{x \to a} f(x)} $$</td>
+                        </tr>
+                        <tr>
+                          <td>Constant Law</td>
+                          <td>$$ \lim_{x \to a} c = c $$</td>
+                        </tr>
+                        <tr>
+                          <td>Direct Substitution Law</td>
+                          <td>$$ \lim_{x \to a} f(x) = f(a) $$</td>
+                        </tr>
+                      </tbody>
+                    </table>
+              </div>
+            </section>
+          </p>
+          <p class="para-content">
+            <h5 class="section-title-3">Evaluating Limits</h5>
+            Limits could be evaluated by the following ways
+            <ul>
+              <li style="padding-bottom:15px"><b>Plugging in the value</b></li>
+    		      <li style="padding-bottom:15px"><b>Factorization</b></li>
+              <li style="padding-bottom:15px"><b>Rationalization</b></li>
+            </ul>
+          </p>
+        </div>
+    </div>
+
+
+
+
+
+			<div>&nbsp;</div>
+			<div style="width:10%;border-left:1px solid #e6d9ce;height:20cm;float:right;position:fixed;right:4%">
+			</div>
+
+    </div> <!-- end of container -->
+  </div> <!-- end of full screen -->
+  <!--<footer class="page-footer"></footer>-->
+  <script>
+    (function ($) {
+      $(function () {
+
+        function handleSideBar() {
+          var screenWidth = screen.width;
+
+          if (screenWidth <= 900) {
+            $('.button-collapse').show();
+            $('.button-collapse').sideNav();
+            $('.page').css('padding', '10px')
+          } else {
+            $('.button-collapse').hide();
+            $('.page').css('padding', '20mm 30mm 20mm 30mm');
+          }
+        }
+
+        handleSideBar();
+        window.addEventListener('resize', function () {
+          handleSideBar();
+        });
+
+      }); // end of document ready
+    })(jQuery); // end of jQuery name space
+  </script>
+</body>
+
+</html>

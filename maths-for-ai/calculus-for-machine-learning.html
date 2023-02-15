@@ -1,0 +1,428 @@
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>My Notes on AI</title>
+
+  <!-- CSS  -->
+  <link rel="stylesheet" href="https://fast.fonts.net/cssapi/0340becf-de91-4caa-9bd5-90b2ef07bbd3.css" />
+  <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+  <!--  Scripts-->
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/materialize.js"></script>
+  <script src="../js/init.js"></script>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+  <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+        });
+    </script>
+</head>
+
+<body>
+  <div class="fullscreen">
+
+    <nav class="white" role="navigation" style="position:fixed;top:0px;z-index:1000;border-bottom:1px solid #e6d9ce;">
+      <div class="container">
+        <div class="nav-wrapper">
+
+          <ul class="right">
+            <li><a href="#"></a></li>
+          </ul>
+
+          <ul id="nav-mobile" class="side-nav fixed">
+            <li style="padding-bottom:15px"><a href="../index.html">Home</a></li>
+            <li style="padding-bottom:15px"><a href="../maths-for-ai-content-list.html"><span style="line-height:25px">Maths for<br>Artificial Intelligence</span></a></li>
+				    <li style="padding-bottom:15px"><a href="../linear-algebra-content-list.html"><span style="line-height:25px">Linear Algebra using<br>Math Expressions and Numpy</span></a></li>
+            <li style="padding-bottom:15px"><a href="../multivariable-calc-content-list.html"><span style="line-height:25px">Multivariable<br>Calculus and Automatic Differentiation</span></a></li>
+				    <li style="padding-bottom:15px"><a href="../ml-content-list.html"><span style="line-height:25px">Machine Learning with scikit-learn (Supervised, Unsupervised, and Ensemble Learning)</span></a></li>
+				    <li style="padding-bottom:15px"><a href="../dl-content-list.html"><span style="line-height:25px">Deep Learning with CNN, RNN &amp; LSTM</span></a></li>
+				    <li style="padding-bottom:15px"><a href="../cv-content-list.html"><span style="line-height:25px">Computer Vision for Image recognition and OCR</span></a></li>
+						<li style="padding-bottom:15px"><a href="../nlp-content-list.html"><span style="line-height:25px">Natural Language<br>Processing with Transformers</span></a></li>
+						<li style="padding-bottom:15px"><a href="ml-ops-content-list.html"><span style="line-height:25px">ML-Ops<br>Deploying Models to Production</span></a></li>
+            <li style="padding-bottom:15px"><a href="papers-content-list.html"><span style="line-height:25px">Interesting <br>Research Papers</span></a></li>
+          </ul>
+          <a href="#" data-activates="nav-mobile" class="button-collapse">
+            <i class="mdi-navigation-menu brand-text-color"></i>
+          </a>
+
+          <a id="logo-container" href="#" class="navigationactionbarcontentscreentitle brand-text-color"><div style="float:left;"><img src="../images/notes-icon-4.svg" width="60" height="60"></div><div style="float:left;margin-left:10px;">My Notes on AI</div></a>
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="container" style="position:relative;top:56px;">
+			<div style="height:100%;float:left;padding:0px;margin:0px">
+				<div class="page">
+        <p class="topic-name" style="font-weight: 500">Calculus for Machine Learning </p>
+        <h4 class="section-title-2">Derivatives - Single Variable </h4>
+        <p class="para-content">Derivatives are an important concept in Machine Learning. Derivatives are used in Machine learning
+        for the purpose of optimization and used to minimize the error in Machine Learning. For example, the
+       task of a Machine Learning model forecasting house price is to optimize the best possible prediction.</p>
+        <h5 class="section-title-3">Instantaneous Rate of Change</h5>
+        <p class="para-content">
+          A derivative is an instantaneous rate of change of a function. Distance can be represented as a function, and its rate of chage is called Velocity.
+          The measure of how fast the distance is changing with respect to time is called the instantaneous rate ogf change and its the
+          slope of the tangent line. The instantaneous rate of change is a measure of how fast the relation between two variables is changing at any point.
+        </p>
+        <h5 class="section-title-3">Slopes, minima and maxima</h5>
+        <p class="para-content">
+          Minima, and maxima are the points of the function curve where the derivative of the tangent line is 0 or the derivative is 0
+        </p>
+        <h5 class="section-title-3">Derivatives Notations</h5>
+        <p class="para-content">
+          $$ \text{function : } y = f(x) $$
+          $$ \text{Derivative of f is expressed as :} $$
+          $$ \text{Lagrange's Notation : } f'(x) $$
+          $$ \text{Leibniz's Notation : } \frac{dy}{dx} = \frac{d}{d} f(x) $$
+        </p>
+        <h5 class="section-title-3">Derivative of a Constant</h5>
+        <p class="para-content">
+          Derivative of a constant is always 0 since there is no change in the function
+          $$ \frac{\Delta y}{\Delta x} = \frac{c - c}{x_1 - x_0} = 0 $$
+        </p>
+        <h5 class="section-title-3">Derivative of a Line</h5>
+        <p class="para-content">
+          The equation of a line is : $ f(x) = ax + b $
+          The derivative of a line is the slope of the line $ \Large{\frac{\Delta y}{\Delta x} = \frac{rise}{run} = a} $<br><br>
+          $ \Large{\frac{\Delta{y}}{\Delta{x}} = \frac{a(x + \Delta{x}) + b - (ax + b)}{\Delta{x}}} $<br><br>
+          $ \Large{\frac{\Delta{x}}{\Delta{x}}} = a $
+        </p>
+        <h5 class="section-title-3">Derivative of Quadratic</h5>
+        <p class="para-content">
+          Quadratics : $ y = f(x) = x^2 $ <br><br>
+          Slope : $ \Large{\frac{\Delta f}{\Delta x} = \frac{(x + \Delta{x})}{f(x)}} $ <br><br>
+
+        </p>
+      </div>
+      <div class="page">
+        <p class="para-content">
+          $$ \frac{df}{dx} \ \frac{\Delta f}{\Delta x} = \frac{(x + \Delta{x})^{2} - x^{2}}{\Delta{x}} $$
+          $$ = 2x  \ \ \text{as} \ \Delta{x} \ \rightarrow \ 0 $$
+          $$ f'(x) = 2x $$
+        </p>
+
+        <h5 class="section-title-3">Derivative of Cubic Functions</h5>
+        <p class="para-content">
+          Cubic : $ y = f(x) = x^3 $ <br><br>
+          Slope : $ \Large{\frac{\Delta f}{\Delta x} = \frac{(x + \Delta{x})^{2} - x^{2}}{\Delta{x}}} $ <br><br>
+          $ 3x \Delta x + 3x^{2} + \Delta x^{2}$
+        </p>
+        <h5 class="section-title-3">Derivative of Hyperbola Functions</h5>
+        <p class="para-content">
+          Hyperbola : $ y = f(x) = x^{-1} = \frac{1}{x} $ <br><br>
+          $ f'(x) = -x^{-2} $
+        </p>
+        <h5 class="section-title-3">Derivative of Power Functions</h5>
+        <p class="para-content">
+          <section id="section-4">
+            <div class="row">
+                  <table class="table">
+                    <tbody>
+                      <tr>
+                        <td>$ \large{f(x) = x^{2}} $</td>
+                        <td>$ \large{f'(x) = 2x^{1}} $</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>$ \large{f(x) = x^{3}} $</td>
+                        <td>$ \large{f'(x) = 3x^{2}} $</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>$ \large{f(x) = x^{-1}} $</td>
+                        <td>$ \large{f'(x) = (-1)x^{-2}} $</td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            <div class="row">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td>$ \large{f(x) = x^{n}} $</td>
+                    <td>$ \large{f'(x) = \frac{d}{dx} f(x) = nx^{(n - 1)}} $</td>
+                    <td></td>
+                  </tr>
+              </table>
+            </div>
+          </section>
+        </p>
+        <h5 class="section-title-3">Derivatives of Trigonometric Function</h5>
+        <p class="para-content">
+          $$ \large{y = f(x) = \sin(x)} $$
+          $$ \large{f'(x) = \cos(x)} $$
+
+          $$ \large{y = f(x) = \cos(x)} $$
+          $$ \large{f'(x) = -\sin(x)} $$
+        </p>
+
+        <h5 class="section-title-3">Derivatives of Exponential Function</h5>
+        <p class="para-content">
+          $$ \large{y = f(x) = e^x} $$
+          $$ \large{f'(x) = e^x} $$
+        </p>
+        <h5 class="section-title-3">Derivatives of Logarithmic Function</h5>
+        <p class="para-content">
+          Logarithmic function $ f^{-1}(y) = log(y) $ is the inverse of the exponetial function $ f(x) = e^{x} $ because
+          $ e^{\log(x)} = x $ and $ \log(e^{y} = y) \text{.} \ \log(x) $ is the inverse of $\ e^{x} $ <br><br>
+          $ \large{\frac{d}{dy} f^{-1}(y) = \frac{1}{f'(f^{-1}(y))}} $ <br><br>
+          $ \large{\frac{d}{dy} \log(y) = \frac{1}{e^{log(y)}} = \frac{1}{y}} $
+          $ \large{\frac{d}{dy} \log(y) = \frac{1}{y}} $
+        </p>
+      </div>
+      <div class="page">
+        <h5 class="section-title-3">Differentiable Function</h5>
+        <p class="para-content">
+          A function is called differentiable at a point means that the derivative exist for that point.
+          For a function to be differentiable at an interval, the derivative at an interval: The derivative
+          has to exist for every point in the interval.
+        </p>
+        <p class="para-content">
+          A few functions do not statisfy this property, they are called non-differentiable function.
+          For example, the absolute function $ f(x) = \begin{cases}
+                                                        \ x & \ if \ \ x\geq 0 \\
+                                                        -x & \ if \ \ x\leq x
+                                                        \end{cases}
+                                             $
+          is not differentiable at the origin, the point with sharp edge or corner is called a cusp. A piece-wise
+          function with jump discontinuity is also a non-differentiable function. A function with a vertical tangent
+          is non-differentiable, because the vertical tangent does not have a well-defined slope.
+        </p>
+        <h5 class="section-title-3">Properties by Derivatives</h5>
+        <p class="para-content">
+          <b>Multiplication by scalar</b>
+          $$ f' = cg' $$
+          <b>Product Rule</b> <br><br>
+          $$ f'(t) = g'(t)h(t) + g(t)h'(t) $$
+          <b>Product Rule</b> <br><br>
+          $$ \frac{d}{dt} f(g(h(t))) = \frac{df}{dg} . \frac{dg}{dh} . \frac{dg}{dh} $$
+          $$ f(g(h(t))) = \frac{df}{dg} . \frac{dg}{dh} . \frac{dg}{dh} $$
+          $$ f'(g(h(t))).g'(h(t)).h'(t) $$
+          If Temperature changes W.R.T height $ \frac{dT}{dh} $ and height changes W.R.T. time $ \frac{dh}{dt} $ then
+          temperature changes w.r.t. time $ \frac{d}{T} $
+          $$ \frac{dT}{dt} = \frac{dT}{dh}.\frac{dh}{dt} $$
+        </p>
+        <h4 class="section-title-2">Optimization</h4>
+        <h5 class="section-title-3">Optimization of Squared Loss</h5>
+        <p class="para-content">
+          The cost function (quadratic) : $ (x - a^{2}) + (x - b^{2}) $. In order to optimize the cost function
+          we need to find the point where the slope is 0, that is <br><br>
+          $ \frac{d}{dx}[(x - a)^{2} + (x - b)^{2}] = 0 $ <br><br>
+          By using the chain rule we get <br><br>
+          $ 2(x - a) + 2(x - b) = 0 $ <br><br>
+          $ 2x - a - b = 0 $ <br><br>
+        </p>
+
+      </div>
+      <div class="page">
+        <p class="para-content">
+          $ 2x = a + b $ <br><br>
+          $ x = \large{\frac{a + b}{2}} $ <br><br>
+          Hence the optimal solution is in the middle of the curve.
+        </p>
+        <h5 class="section-title-3">Generalized Squared Loss</h5>
+        <p class="para-content">
+          Minimize $ (x - a_1)^{2} + (x - a_2)^{2} + ... + (x - a_n)^{2} $ <br><br>
+          Solution : $ \ x = \Large{\frac{a_1 + a_2 + a_3 + ... + a_n}{n}} $
+        </p>
+        <h5 class="section-title-3">Optimization of log Loss</h5>
+        <p class="para-content">
+          $$ \log{(g(p))} = \log((p)^{7}(1 - P)^{3}) = log{(p)^{7}} + \log{((1 - p)^{3})} $$
+          $$ 7 \ \log{p} - 3 \ \log{(p - 1)} = G(p) $$
+
+          In Machine Learning Logarithm is used to simplify a product, which might be a very tiny number.
+        </p>
+
+        <h4 class="section-title-2">Multivariable Calculus</h4>
+        <h5 class="section-title-3">Introduction to Tangent Planes</h5>
+        <div class="para-content">
+          In multivarible such as two variables function the concept of tangent plane is used
+          in place of a tangent line. Optimizing a function of two variables can get complicated
+          and we use several tools to optimize such functions. Gradient Descent is an widely used method
+          of optimization.
+        </div>
+        <h5 class="section-title-3">Definition of the derivative of a multivariable function</h5>
+        <div class="para-content">
+          Partial Derivative with respect to x $ f_x(a, b) = \lim_{x \to a} \frac{f(a+h, b) - f(a, b)}{h} $
+        </div>
+        <div class="para-content">
+          Partial Derivative with respect to y $ f_y(a, b) = \lim_{x \to a} \frac{f(a+h, b) - f(a, b)}{h} $
+        </div>
+        <div class="para-content">
+          The tangent plane in two dimension can be found by cutting the space into planes and calculate
+          the tangents on these planes. We can find the tangent plane of the function $ f(x, y) = x^{2} + y^{2} $
+          in the following way. <br><br>
+          We can fix the value of y = 4. Fix $ \ y = 4, \ f(x, y) = x^{2} + 4^{2} $ <br><br>
+          $ \frac{d}{dx}(f(x,4)) = 2x $ <br><br>
+
+          We can fix the value of x = 2. Fix $ \ x = 2, \ f(x, y) = 2^{2} + y^{2} $ <br><br>
+          $ \frac{d}{dy}(f(2,y)) = 2y $ <br><br>
+          The tangent plane contains two tangent lines.
+        </div>
+        <h5 class="section-title-3">Partial Derivatives</h5>
+        <div class="para-content">
+          Whlie taking the derivative of a multivariable function we take one variable constant
+          and take the derivative by making the function as the function of one variable. In case of
+          two variables we take y as conatant and take the derivative of the function w.r.t. x and in th esecond step take
+          x constant and take the derivative of the function w.r.t. y
+          $$ f(x, y) \ \rightarrow \ f_x = \frac{\partial f}{\partial x} \text{and} \ \ f_y = \frac{\partial f}{\partial y} $$
+        </div>
+        <div class="para-content">
+          Steps of finding the partial derivative of f with respect to x. <br>
+          <b>Step 1:</b> Treat all the other variables except x as constant. <br>
+          <b>Step 2:</b> Differentiate the function using the normal rule of differentiation. <br><br>
+        </div>
+      </div>
+      <div class="Page">
+        <div class="para-content">
+          Steps of finding the partial derivative of f with respect to y <br>
+          <b>Step 1:</b> Treat all the other variables except y as constant. <br>
+          <b>Step 2:</b> Differentiate the function using the normal rule of differentiation.
+        </div>
+        <div class="para-content">
+          $ f(x, y) = x^{2} + y^{2} \\
+           \frac{\partial f}{\partial x} = 2x \\
+           \frac{\partial f}{\partial y} = 2y $
+        </div>
+        <h5 class="section-title-3">Partial Derivatives : More Examples</h5><br>
+        <div class="para-content">
+          $ f(x, y) = 3x^{3}y^{3} \\
+            \frac{\partial f}{\partial x} = 6xy^{3} \\
+            \frac{\partial f}{\partial y} = 9x^{2}y^{2}
+          $
+        </div>
+        <h5 class="section-title-3">Gradients</h5>
+        <div class="para-content">
+          Gradient is an organization of derivatives in a vector form. The number of items in the
+          vector will simply be the number of variables in the function.<br><br>
+          $ f(x, y) = x^{2} + y^{2} \\
+          \text{Gradient :} \large{\begin{bmatrix} 2x \\ 2y \end{bmatrix}} \
+          \nabla{f} = \large{\begin{bmatrix} \frac{\partial f}{\partial x} \\ \frac{\partial f}{\partial y} \end{bmatrix}} $ <br><br>
+          The gradient at the point (2,3) is $ \nabla{f} = \begin{bmatrix} 2 & . & 2 \\ 2 & . & 3 \end{bmatrix} = \begin{bmatrix} 4 \\ 6 \end{bmatrix} $
+        </div>
+        <h5 class="section-title-3">Gradients and maxima/minima</h5>
+        <div class="para-content">
+          Gradients are useful when we want to minimize or maximize function. The minimum of a function with two variables happens
+          when both the slopes of the tangent line given by the partial derivatives are 0
+        </div>
+        <h5 class="section-title-3">Optimization using Gradient Descent</h5>
+        <div class="para-content">
+          Gradient Descent is a powerful method for minimizing or maximizing functions,
+          especially in higher dimensions. In order to optimiza a function we first find the local minima
+          and then start at any point of the function and try to reach to the local minima by walking
+          small steps along the slope.
+        </div>
+        <div class="para-content">
+          new point = old point - slope
+          $ x_1 = x_0 - f'(x_0) \\
+            x_1 = x_0 - \alpha f'(x_0) \\
+          $
+          $ \alpha $ is called the learning rate, which really means the step size of proceeding
+          towards the minima in the iterative method of Gradient Descent optimization.
+        </div>
+        <h5 class="section-title-3">Gradient Descent Algorithm</h5>
+        <div class="para-content">
+          function f(x)             Objective: Minimize f(x), find the minimum point of f(x) <br>
+          <b>Step - 1 :</b><br>
+          Define learning rate $ \alpha $ Choose a staring point $x_0$ <br>
+          <b>Step - 2 :</b><br>
+          $ x_k = x_{k - 1} - af'(x_{k} - 1) $
+        </div>
+      </div>
+      <div class="Page">
+        <div class="para-content">
+          <b>Step - 3 :</b><br>
+          Iterate Step: 2 until reaching close enough to the true minimum.
+        </div>
+        <div class="para-content">
+          <b>Gradient Descent:</b><br>
+          $ f(x) = e^{x} - \log{(x)}  \ \ \ f'(x) = e^{x} - \frac{1}{x} \\
+            \text{Start :} = 0.05  \ \ \ \ \ \text{Rate :} \alpha = 0.005 $ <br><br>
+          $ \text{Find :} \text{Find :} \ f'(0.05) = -18.9 \\
+          \ \text{Move by} \ \ \ -0.005 \ \ \ \ \ \ f'(0.05) \\
+            \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x \rightarrow 0.1447 \\
+          $ <br><br>
+          $ \text{Find :} \ f'(0.1447) = -5.7552 \\
+          \text{Move by} \ \ \ -0.005 \ \ \ \ \ \ f'(0.05) \\
+            \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x \rightarrow 0.1735 \\
+          $
+        </div>
+        <h5 class="section-title-3">Newton's Method : An alternate to Gradient Descent</h5>
+        <div class="para-content">
+          The primary objective of Newton's method is to find zeros of a function. This method can be adpated
+          to Optimization.
+        </div>
+        <p class="para-content">
+          <section id="section-4">
+            <div class="row">
+                  <table class="table">
+                    <tbody>
+                      <tr>
+                        <td> Newton's method</td>
+                        <td>Newton's method for Optimization</td>
+                      </tr>
+                      <tr>
+                        <td>find a 0 of $ f(x) $</td>
+                        <td>Goal: minimize  $ g(x) \rightarrow $ find zeros of $ g'(x) $</td>
+                      </tr>
+                      <tr>
+                        <td>1) Start with some x_0</td>
+                        <td>1) Start with some x_0</td>
+                      </tr>
+                      <tr>
+                        <td>2) Update: </td>
+                        <td>2) Update: </td>
+                      </tr>
+                      <tr>
+                        <td>$ \large{x_{k+1} = x_{k} - \frac{f(x_{k})}{f'(x_{k})}} $</td>
+                        <td>$ \large{x_{k+1} = x_{k} - \frac{g(x_{k})}{g'(x_{k})}} $</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+          </section>
+        </p>
+      </div>
+			<div>&nbsp;</div>
+			</div>
+			<div style="width:10%;border-left:0px solid #e6d9ce;height:20cm;float:right;position:fixed;right:4%">
+			</div>
+    </div>
+
+  </div>
+  <!--<footer class="page-footer"></footer>-->
+  <script>
+    (function ($) {
+      $(function () {
+
+        function handleSideBar() {
+          var screenWidth = screen.width;
+
+          if (screenWidth <= 900) {
+            $('.button-collapse').show();
+            $('.button-collapse').sideNav();
+            $('.page').css('padding', '10px')
+          } else {
+            $('.button-collapse').hide();
+            $('.page').css('padding', '20mm 30mm 20mm 30mm');
+          }
+        }
+
+        handleSideBar();
+        window.addEventListener('resize', function () {
+          handleSideBar();
+        });
+      }); // end of document ready
+    })(jQuery); // end of jQuery name space
+  </script>
+</body>
+
+</html>

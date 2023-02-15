@@ -1,0 +1,432 @@
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>My Notes on AI</title>
+
+  <!-- CSS  -->
+  <link rel="stylesheet" href="https://fast.fonts.net/cssapi/0340becf-de91-4caa-9bd5-90b2ef07bbd3.css" />
+  <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+  <!--  Scripts-->
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/materialize.js"></script>
+  <script src="../js/init.js"></script>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+  <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+        });
+  </script>
+</head>
+
+<body>
+  <div class="fullscreen">
+
+    <nav class="white" role="navigation" style="position:fixed;top:0px;z-index:1000;border-bottom:1px solid #e6d9ce;">
+      <div class="container">
+        <div class="nav-wrapper">
+
+          <ul class="right">
+            <li><a href="#"></a></li>
+          </ul>
+
+          <ul id="nav-mobile" class="side-nav fixed">
+            <li><a href="../index.html">Home</a></li>
+				    <li style="padding-bottom:15px"><a href="../linear-algebra-content-list.html"><span style="line-height:25px">Linear Algebra using<br>Math Expressions and Numpy</span></a></li>
+            <li style="padding-bottom:15px"><a href="../multivariable-calc-content-list.html"><span style="line-height:25px">Multivariable<br>Calculus and Automatic Differentiation</span></a></li>
+				    <li style="padding-bottom:15px"><a href="../ml-content-list.html"><span style="line-height:25px">Machine Learning with scikit-learn (Supervised, Unsupervised, and Ensemble Learning)</span></a></li>
+				    <li style="padding-bottom:15px"><a href="../dl-content-list.html"><span style="line-height:25px">Deep Learning with CNN, RNN &amp; LSTM</span></a></li>
+				    <li style="padding-bottom:15px"><a href="../cv-content-list.html"><span style="line-height:25px">Computer Vision for Image recognition and OCR</span></a></li>
+						<li style="padding-bottom:15px"><a href="../nlp-content-list.html"><span style="line-height:25px">Natural Language<br>Processing with Transformers</span></a></li>
+						<li><a href="ml-ops-content-list.html"><span style="line-height:25px">ML-Ops<br>Deploying Models to Production</span></a></li>
+            <li><a href="papers-content-list.html"><span style="line-height:25px">Interesting <br>Research Papers</span></a></li>
+          </ul>
+          <a href="#" data-activates="nav-mobile" class="button-collapse">
+            <i class="mdi-navigation-menu brand-text-color"></i>
+          </a>
+
+          <a id="logo-container" href="#" class="navigationactionbarcontentscreentitle brand-text-color"><div style="float:left;"><img src="../images/notes-icon-4.svg" width="60" height="60"></div><div style="float:left;margin-left:10px;">My Notes on AI</div></a>
+        </div>
+      </div>
+    </nav>
+    <div class="container" style="position:relative;top:56px;">
+			<div style="height:100%;float:left;padding:0px;margin:0px">
+  				<div class="page">
+          <p class="topic-name" style="font-weight: 500">NLP with Probalilistic Model</p>
+          <h4 class="section-title-2">Probabilistic Model and how to use them to predict word sequences</h4>
+          <p class="para-content">This Technology is used to power auto-corrections and web search suggestions. The principle algorithms used are called</p>
+          <p class="para-content">
+              <ul>
+                <li class="list-content">Markov Models</li>
+                <li class="list-content">veterbi algorithm</li>
+              </ul>
+          </p>
+          <h5 class="section-title-3">Spelling Correction using Autocorrect</h5>
+          <h5 class="section-title-4">What is AutoCorrect?</h5>
+          <p class="para-content">
+            AutoCorrect is a feature that changes misspelled words into the correct one. It uses the minimum edirt distance feaure to detect the candidates
+            for correct word.
+          </p>
+          <h5 class="section-title-4">How does AutoCorrect work?</h5>
+          <p class="para-content">
+            <ul>
+              <li class="list-content">1. Identify a misspelled word </li>
+              <li class="list-content">2. Find strings n edit distance away. These words could be random strings</li>
+              <li class="list-content">3. Filter candidates. Keep only the real words from the previous steps.</li>
+              <li class="list-content">4. Calculate word probabilities. Select the word that is most likely to occur in that context.</li>
+            </ul>
+          </p>
+          <h5 class="section-title-4">Identifying a misspelled word</h5>
+          <p class="para-content">
+            Whether a word is mispelled or not is identified by it's presence in the dictionary. If the word is correct then it is found in the dictionary, if it is
+            not then the autocorrect workflow gets executed for the misspelled word.
+          </p>
+          <h5 class="section-title-4">Finding strings that are n edit distance away from the input word</h5>
+          <p class="para-content">
+            In this step we identify the words that are n-edit distance away from the input word. For example, dear is one edit distance away from deer.
+            <b>Edit</b> operations are <b>Insert</b>, <b>Delete</b> and <b>Switch</b> (swap 2 adjacent letters) and <b>Replace</b> (replace one letter with
+            another letter). By combining these operations on the original strings we can find all the strings that are n-edit distance away from the input string.
+          </p>
+          <h5 class="section-title-4">Filter Candidates</h5>
+          <p class="para-content">
+            Not all of the words generated by these edits are actual words. Hence the filter mechanism nominates the actual word by matching the word with the vocabulary
+            or dictionary. In this case we are only detecting the spelling errors and not the contexual errors.
+          </p>
+          <h5 class="section-title-4">Calculate word probabilities and find the most common words from the candidates</h5>
+          <p class="para-content">
+            A body of text is called a Corpus, that hosts the vocabulary used in the particular piece of text. The count of the occurances of each word is calculated
+            for all the words in this corpus. Following is an example the word frequency for an example sentence <br>
+          </p>
+          <p class="para-content">
+            <b>Sentence: A body of text is called a Corpus.</b>
+          </p>
+        </div>
+        <div class="page">
+          <p class="para-content">
+            <section id="section-4">
+              <div class="row">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <td>Word</td>
+                          <td>Count</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>A</td>
+                          <td>2</td>
+                        </tr>
+                        <tr>
+                          <td>body</td>
+                          <td>1</td>
+                        </tr>
+                        <tr>
+                          <td>of</td>
+                          <td>2</td>
+                        </tr>
+                        <tr>
+                          <td>text</td>
+                          <td>2</td>
+                        </tr>
+                        <tr>
+                          <td>is</td>
+                          <td>1</td>
+                        </tr>
+                        <tr>
+                          <td>called</td>
+                          <td>1</td>
+                        </tr>
+                        <tr>
+                          <td>Corpus</td>
+                          <td>1</td>
+                        </tr>
+                      </tbody>
+                    </table>
+              </div>
+            </section>
+          </p>
+          <p class="para-content">
+            The probability of a word is calculated by dividing the number of times the word appears divide by the total size of the corpus.
+            $$ P(w) = \frac{C(w)}{V} \ \ \ \ P(text) = \frac{C(text)}{V} = \frac{2}{10} $$
+          </p>
+          <h5 class="section-title-4">Minimum Edit Distance</h5>
+          <p class="para-content">
+            Minimum edit distance can be use to evaluate the diaance between two strings. Minimum edit distance
+            is applied in various use cases such as Spelling Correction, Document Similarity, Machine Translation, DNA Sequencing and many more.
+          </p>
+          <p class="para-content">
+            Minimum edit distance uses Dynamic programming and uses a matrix that takes account of how many edit operations are performed in order to
+            change each character from the source word to target word. This minimum edit distance algorithm provides the mechanisms to get the candidates
+            that are certain number of distance away from the input words. These candidates are then filtered for the most correct words.
+          </p>
+          <h5 class="section-title-3">Parts of Speech Tagging</h5>
+          <h5 class="section-title-4">POS Tagging using Viterbi Algorithm</h5>
+          <p class="para-content">
+            Viterbi algorithm makes the use of Dynamic programming. Dynamic programmimg is an optimization
+            technique that breaks down a big problem into smaller problems, comes up with an optimal solution
+            of the mini problems and makes use of the optimal solution of the mini problem to solve the big problem.
+          </p>
+          <p class="para-content">
+            Parts of speech refers to the lexical words in a sentence. Lexical terms are noun, verb, determiner and
+            adverb in a sentence. We can make assumptions about the semantics of a sentence from Parts of Speech tags because
+            POS tags describe the characteristic structure of the lexical terms. From Parts of Speech we can make assumptions
+            about the semantics of a sentence because POS tags describe the characteristic structure of the lexical terms.
+            Tags are used for coreference resolution. For example, in the sentences <b>Eiffel Tower is located in Paris. It is 324 meters long.</b>
+            <b>Eiffel Tower</b> and <b>Paris</b> are both named entities and we can infer that <b>it</b> refers to Eiffel Tower. We can use the
+            <b>Markov Chain</b> probabilistic Graphical Model to decode the parts of Speech in a sentence.
+          </p>
+        </div>
+          <div class="page">
+              <p class="para-content">
+                Parts of speech tagging can be used for:
+                <ul>
+                  <li class="list-content">Identifying named entities</li>
+                  <li class="list-content">Speech recognition</li>
+                  <li class="list-content">Coreference Resolution</li>
+                </ul>
+              </p>
+              <h5 class="section-title-4">Markov Chain</h5>
+              <p class="para-content">
+                Markov Chains are used to understand Parts of Speech tagging and Speech Recognition. Using
+                In POS tagging use case using Markov Chain we try to undestand whether in a sentence given a word
+                is a noun, how likely is it that the next word is a verb or a noun. If the given sentence is in
+                English language then the probability of the next word being a verb is way greater than the
+                the word being another noun.
+              </p>
+              <p class="para-content">A Markov Chain can be depicted as a Directive Graph. A Markov Chain can be depicted
+                as a Directive Graph. A Graph consists of certain nodes or states and transitions or edge from one state to the other.
+              </p>
+              <h5 class="section-title-4">Markov Chains and POS Tags</h5>
+              <p class="para-content">
+                While calculating the POS tagging, it is important to understand how likely one state will be transitioning
+                to another state. The probability of going one state to the other is called Transition Probabilities. While
+                calculating the POS tagging, it is important to understand how likely one state will be transitioning to
+                another state. The probability of going one state to the other is called Transition Probabilities. A Markov Chain
+                can be represented as a matrix of transition probabilities. Each row in the matrix represents transition probabilities
+                of one states to all other states. All of the trasition probabilities of each row add up to 1.
+
+              $$ \text{States} \ \ \ Q ={q_1, ....q_n} $$
+              $$ \text{Transition Matrix} \ \  A = \begin{bmatrix}
+               a_{1,1} & \ \text{....} \ \ &  a_{1,N} \\a{N + 1,1} & \ \text{....} \ \ &  a_{N+1,N} \end{bmatrix} $$
+             </p>
+             <h5 class="section-title-3">Hidden Markov Model</h5>
+             <p class="para-content">
+               Hidden Markov model is used decode the hidden state of a word. Hidden States is just the
+               parts of speech of that word. For example the POS of the word "Call" is verb, and this constitute
+               the hidden state of the word.
+             </p>
+              <p class="para-content">
+                The Emission probabilities are another property of the Hidden Markov model. These describe the transition from the hidden states of your Hidden Markov model,
+                to the observables or the words of the corpus. For example, the hidden state <b>going</b>(in this case which is a verb) could emmit to the observable like <b>to</b>
+                and <b>eat</b>. Suppose the emission probability from the hidden states, verb to the observable, <b>eat</b>, is <b>0.5</b>. This means when the model is currently
+                at the hidden state for a verb, there is a 50 percent chance that the observable the model will emit is the word, eat.
+              </p>
+            <h5 class="section-title-4">Notation of Hidden Markov Model</h5>
+            <p class="para-content">
+              <section id="section-4">
+                <div class="row">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td>States</td>
+                            <td>Transition Matrix</td>
+                            <td>Emmision Matrix</td>
+                          </tr>
+                          <tr>
+                            <td>$ Q ={q_1, ....q_n} \ = \ \ $</td>
+                            <td>$ A = \begin{bmatrix} a_{1,1} & \ \text{....} \ \ &  a_{1,N} \\a_{N + 1,1} & \ \text{....} \ \ &  a_{N+1,N} \end{bmatrix} \ = \ \ $</td>
+                            <td>$ B = \begin{bmatrix}
+                              b_{11} & \ \text{....} \ \ &  b_{1V} \\ b_{N1} & \ \text{....} \ \ &  b_{NV} \end{bmatrix} $</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+              </section>
+            </p>
+        </div>
+        <div class="page">
+          <h5 class="section-title-4">Calculating the Transition and Emmision Probabilities</h5>
+          <p class="para-content">
+            1. Count occurances of tag pairs $C(t_{i-1}, t_i)$ <br><br>
+            2. Calculate probabilities using the counts
+            <br><br>
+            $ P(t_i|t_{i-1}) = \frac{C(t{i-1} - t_i)}{\sum_{j=1}^N \ C(t{i-1} - t_j} $
+          </p>
+          <h5 class="section-title-3">N-gram Models</h5>
+          <p class="para-content">
+            A language model assigns the probability to a sequence of words. More like occuring sequences
+            will receive higher probabilities. More natural sequences in the real world gets higher probability.
+            N-Gram models are used to build language models. N-grams allows us to calculate the probabilities
+            of certain words occuring in a specific sequences. <br><br>
+            P(I saw a van) > P(eyes awe of an)
+          </p>
+          <h5 class="section-title-3">N-gram Models and Probabilities</h5>
+          <h5 class="section-title-4">Bigram Probabilities</h5>
+          <p class="para-content">
+            Corpus: I am happy because I am learning.<br>
+            $ P(am|I) = \large{\frac{\text{I am}}{\text{C(I)}} = \frac{2}{2}} = 1 $ <br><br>
+            $ P(happy|I) = \large{\frac{\text{I happy}}{\text{C(I)}} = \frac{0}{2}} = 0 $ <br><br>
+            $ P(learning|am) = \large{\frac{\text{C(am learning)}}{\text{C(am)}} = \frac{1}{2}} $ <br><br>
+            <b>Probability of a bigram: </b> $ P(y|x) = \large{\frac{\text{C(x y)}}{\sum_{w} \ \text{C(x \ w)}} = \frac{C(x \ y)}{C(x)}} $
+          </p>
+          <p class="para-content">
+            <b> N-gram Probability: </b> <br>
+            $ P(W_N|W^{N-1}_{1}) = \large{\frac{C(W^{N-1}_{1} W_{N})}{C(W^{N-1}_{1})}} $ <br><br>
+            $ C(W^{N-1}_{1} W_{N}) = C(W^{N}_{1}) $ <br><br>
+          </p>
+          <h5 class="section-title-4">Probability of a Sequence</h5>
+          <p class="para-content">
+            Using n-gram probabilities, a model for an entire sentence can be built. The probability of an entire
+            sentence can be built using the Conditional probability and Chain rule. Following is theconditional
+            probability of the word B <br><br>
+            $$ P(B|A) = \frac{P(A, B)}{P(A)} \ \rightarrow P(A, B) = P(A)P(B|A) $$
+            The probability and chain rule can be used in order to calculate the probability of a sentence
+              $$ P(B|A) = \frac{P(A,B)}{P(A)} $$
+              $$ P(A,B,C,D) = P(A)P(B|A)P(C|A, B)P(D| A, B, C) $$
+        </div>
+        <div class="page">
+          <p class="para-content">
+            The probability of each word is calculated by product of the probability of all the predecessor
+            words occured before the word in the sequence<br><br>
+
+            Given a sentence, how to calculate its probabilities?<br><br>
+            P(The teacher drinks tea) = ? <br><br>
+            P(The teacher drinks tea) = P(The)P(teacher|The)P(drinks|The teacher)P(tea|The teacher drinks)
+          </p>
+          </p>
+          <p class="para-content">
+            Since the natural language is highly variable, the exact sequence of the query sentence may not
+            be found in the training corpus, hence the probability of that input sequence will be zero.
+            As the sentence gets longer and longer, the likelihood of its words will occur in a definite
+            sequence becomes smaller and smaller.To resolve this issue we can shrink the width of the
+            scanning window, instead of looking at all the words before a specific word we can look at the
+            previous word or the previous two words. <br><br>
+            P(tea | the teacher drinks) $ \approx  $  P(tea | drinks)
+          </p>
+          <p class="para-content">
+            The bi-gram probabilities are calculated instead of calculating the whole sentence together.Bi-gram probabilities
+            are the product of the conditional probabilities of bi-grams occuring in a sentence.<br><br>
+            P(The)P(teacher|The)P(drinks|teacher)P(tea|The drinks)
+          </p>
+          <h5 class="section-title-4">The Markov Assumption</h5>
+          <p class="para-content">
+            We can apply the Markov Assumption in this context. The Markov assumption states the probability
+            of a word depends only on its limited history of length n. Instead of using a bi-gram model, a tri-gram or an n-gram
+            model can also be applied.
+          </p>
+          <h5 class="section-title-4">Approximation of sequence probability</h5>
+          <p class="para-content">
+            <p class="para-content">
+              <section id="section-4">
+                <div class="row">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td>Markov Assumption: </td>
+                            <td>only last N words matter</td>
+                          </tr>
+                          <tr>
+                            <td>Bigram</td>
+                            <td>$ P(w_n | w^{n-1}{1}) \approx P(w_n | w_{n-1}) $</td>
+                          </tr>
+                          <tr>
+                            <td>N-gram</td>
+                            <td>$ P(w_n | w^{n-1}{1}) \approx P(w_n | w^{n-1}{n-N+1}) $</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+              </section>
+            </p>
+          </p>
+          <h5 class="section-title-3">Word Embeddings</h5>
+          <p class="para-content">
+            Word Embeddings are also known as the word vectors. A word embedding can be represented
+            as a Matrix, in which each vector represents a word. One of the other word representations
+            is One-hot vectors, but One-hot vector representation can be sparsed and does not offer any
+            embedded meaning of the word it represents.
+          </p>
+          <h5 class="section-title-4">Word vector and Word meaning</h5>
+          <p class="para-content">
+            With word embedding we can encode meaning of a vector even in a low dimensional space. Following
+            is a one-dimensional space and the positive words are plotted at the right side of 0 and the negative
+            words are plotted at the left side of 0
+          </p>
+
+        </div>
+        <div class="page">
+          <div class="row">
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <td style="text-align: center; vertical-align: middle;"><img src="../images/nlp_word_embedding.png" width="100%"></td>
+                    </tr>
+                  </tbody>
+                </table>
+          </div>
+          <h5 class="section-title-4">Word vector and Word meaning</h5>
+          <p class="para-content">
+            The Corpus that is used to create an embedding will affect the nature of Embedding. Word
+            Embedding process requires a Corpus and an Embedding method. The corpus contains the words
+            organized in the same way as they would be used in the context of interest. A context gives
+            meaning to each word embedding. The corpus would be a general purpose sets of documents
+            such as, Wikipedia articles, or it could be more specialist such as, an industry, or
+            enterprise specific corpus to capture the nuances of the context. For NLP use cases
+            on legal topics, contracts, and law books as the corpus can be used, the embedding method creates
+            the word embeddings from the corpus.
+          </p>
+          <p class="para-content">
+            An embedding method creates the word embedding from the corpus. There are several ways to create
+            a word embedding. Word2Vec is a model that uses a shallow neural network to create a word embedding.
+            The objective of the model is to learn to predict a missing word given a surrounding word. Other
+            significant models are GloVe which uses factorizing the logarithm of the corpuses word co-occurrence matrix
+            and FastText that takes into account the structure of wordsby representing words as an n-gram
+            of characters.
+          </p>
+          <p class="para-content">
+            Word embeddings are used widely by large language models to understand long sequence of words and can
+            be considered as foundational building blocks of Natural Language Processing.
+          </p>
+        </div>
+
+      </div>
+			<div>&nbsp;</div>
+			</div>
+			<div style="width:10%;border-left:0px solid #e6d9ce;height:20cm;float:right;position:fixed;right:4%">
+			</div>
+    </div>
+  </div>
+  <!--<footer class="page-footer"></footer>-->
+  <script>
+    (function ($) {
+      $(function () {
+
+        function handleSideBar() {
+          var screenWidth = screen.width;
+
+          if (screenWidth <= 900) {
+            $('.button-collapse').show();
+            $('.button-collapse').sideNav();
+            $('.page').css('padding', '10px')
+          } else {
+            $('.button-collapse').hide();
+            $('.page').css('padding', '20mm 30mm 20mm 30mm');
+          }
+        }
+
+        handleSideBar();
+        window.addEventListener('resize', function () {
+          handleSideBar();
+        });
+      }); // end of document ready
+    })(jQuery); // end of jQuery name space
+  </script>
+</body>
+
+</html>

@@ -31,6 +31,7 @@ nav {
 
 ul.side-nav {
 	background-color: #f8f8f8;
+  overflow:scroll;
 }
 
 ul.side-nav.fixed a {
@@ -241,7 +242,7 @@ footer.page-footer {
   font-weight: 500;
   line-height: 1.2;
   color: #000;
-	font-size: 1.5rem;
+	font-size: 1.558rem;
 }
 
 .section-title-4 {
@@ -249,7 +250,7 @@ footer.page-footer {
   font-weight: 500;
   line-height: 1.2;
   color: #000;
-	font-size: 1.2rem;
+	font-size: 1.350rem;
 }
 
 
@@ -284,4 +285,19 @@ footer.page-footer {
 
 .padding-left-50 {
   padding-left: 50px;
+}
+
+.img-border {
+  border: 2px;
+}
+
+.list-content {
+	font-family: "Open Sans", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #555555;
+  text-align:justify;
+	text-justify: inter-word;
+	line-height: 1.8;
+  padding-bottom:15px
 }

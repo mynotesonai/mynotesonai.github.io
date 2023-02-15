@@ -1,0 +1,146 @@
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>My Notes on AI</title>
+  <!-- CSS  -->
+  <link rel="stylesheet" href="https://fast.fonts.net/cssapi/0340becf-de91-4caa-9bd5-90b2ef07bbd3.css" />
+  <link href="../../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="../../css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+  <!--  Scripts-->
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/materialize.js"></script>
+  <script src="../../js/init.js"></script>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+  <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+        });
+    </script>
+</head>
+<body>
+  <div class="fullscreen">
+    <nav class="white" role="navigation" style="position:fixed;top:0px;z-index:1000;border-bottom:1px solid #e6d9ce;">
+      <div class="container">
+        <div class="nav-wrapper">
+          <ul class="right">
+            <li><a href="#"></a></li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav fixed">
+            <li><a href="../index.html">Home</a></li>
+				    <li style="padding-bottom:15px"><a href="../../linear-algebra-content-list.html"><span style="line-height:25px">Linear Algebra using<br>Math Expressions and Numpy</span></a></li>
+            <li style="padding-bottom:15px"><a href="../../multivariable-calc-content-list.html"><span style="line-height:25px">Multivariable<br>Calculus and Automatic Differentiation</span></a></li>
+				    <li style="padding-bottom:15px"><a href="../../ml-content-list.html"><span style="line-height:25px">Machine Learning with scikit-learn (Supervised, Unsupervised, and Ensemble Learning)</span></a></li>
+				    <li style="padding-bottom:15px"><a href="../../dl-content-list.html"><span style="line-height:25px">Deep Learning with CNN, RNN &amp; LSTM</span></a></li>
+				    <li style="padding-bottom:15px"><a href="../../cv-content-list.html"><span style="line-height:25px">Computer Vision for Image recognition and OCR</span></a></li>
+						<li style="padding-bottom:15px"><a href="../../nlp-content-list.html"><span style="line-height:25px">Natural Language<br>Processing with Transformers</span></a></li>
+						<li><a href="ml-ops-content-list.html"><span style="line-height:25px">ML-Ops<br>Deploying Models to Production</span></a></li>
+            <li><a href="papers-content-list.html"><span style="line-height:25px">Interesting <br>Research Papers</span></a></li>
+          </ul>
+          <a href="#" data-activates="nav-mobile" class="button-collapse">
+            <i class="mdi-navigation-menu brand-text-color"></i>
+          </a>
+          <a id="logo-container" href="#" class="navigationactionbarcontentscreentitle brand-text-color"><div style="float:left;"><img src="../../images/notes-icon-4.svg" width="60" height="60"></div><div style="float:left;margin-left:10px;">My Notes on AI</div></a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container" style="position:relative;top:56px;">
+			<div style="height:100%;float:left;padding:0px;margin:0px">
+        <div class="page">
+          <h5 class="section-title-2">Length, Dot Product, Cross Product</h5>
+          <p class="para-content">
+            In a 2D space the distance between $P_1(x_1, y_1)$ and $P_2(x_2, y_2)$ is
+            $$ d = \sqrt{(x_2 - x_1)^{2} + (y_2 - y_1)^{2}} $$
+            This is the same as the length of the vector $\vec(v) = \vec{P_1P_2} $
+          </p>
+          <h5 class="section-title-3">The Norm of the Vector</h5>
+          <p class="para-content">
+            $$ \vec{|| v ||} = \sqrt{v_{1}^{2} + v_{2}^{2} + v_{3}^{2}} \ ( \ \text{or} \  \ || v || = \sqrt{v_{1}^{2} + v_{2}^{2} + v_{3}^{2} + ...... + v_{2}^{n}} \ ) $$
+            the zero vector $\vec{0}$ has length 0.
+          </p>
+          <h5 class="section-title-3">The Unit Vector</h5>
+          <p class="para-content">
+            The vector of length 1 is called a <b>unit vector</b>. If $ \vec{v} \neq \vec{0} $, then $\frac{1}{\vec{|| v ||}} \times \vec{v}$
+            is a unit vector. There are a few unit vectors which are important.
+            $$ \vec{i} = \begin{bmatrix} 1 \\ 0 \end{bmatrix} \ \text{,} \ \vec{i} = \begin{bmatrix} 0 \\ 1 \end{bmatrix} \ \ \text{in 2D space} $$
+            $$ \vec{i} = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}\text{,} \ \ \vec{j} = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}\text{,} \ \ \vec{k} = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}  \ \ \text{in 3D space} $$
+            $$ \text{This is because for any vector} \vec{v} \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = \begin{bmatrix} v_1 \\ 0 \end{bmatrix} + \begin{bmatrix} 0 \\ v_2 \end{bmatrix} \\
+             \ \ = v_1 \times \begin{bmatrix} 1 \\ 0 \end{bmatrix} + v_2 \times \begin{bmatrix} 1 \\ 0 \end{bmatrix} $$
+          </p>
+          <h5 class="section-title-3">Dot Product</h5>
+          <p class="para-content">
+            A Dot product is a vector operation that tells us how much two vectors a and b go in the same direction.
+            If the result of dot product is 0 then we can conclude that these two vectors are perpendicular or have $90^{\circ}$
+            $$ \text{Let} \ \ \vec{u} . \vec{v} = \begin{bmatrix} u_1 + v_1 \\ u_2 + v_2 \end{bmatrix} $$
+            The length of a vector $ \vec{|| v ||} $ can be expressed as follows
+            $$ \large{\vec{|| v ||} = \sqrt{\vec{v} . \vec{v}}} $$
+          </p>
+          <h5 class="section-title-3">Relation between dot product and the Euclidean Geometric notion of Angle</h5>
+          <p class="para-content">
+            Let $ u_1 \ text{and} \ v_1 $ be non-zero vectors in 2D-space or 3D-space, and let $\theta$ be the angle between $\vec{u} \ \text{and} \ \vec{v} $. Then
+              $$ \vec{|| v ||} = \vec{|| v ||}\vec{|| v ||}\cos \theta $$
+              $$  \cos \theta = \frac{\vec{u} . \vec{v}}{\vec{|| u ||}\vec{|| v ||}} $$
+              $$  \vec{| u |} . \vec{| v |} <= \vec{|| u ||}\vec{|| v ||} $$
+          </p>
+          <h5 class="section-title-3">Orthogonal Projections</h5>
+          <p class="para-content">
+            Let $ vec{u} \ text{and} \ vec{b} $ two vectors in 2-space or 3-space. Then the vector $vec{w_1}$ forms an orthogonal projection of $vec{u} \text{on} vec{b} $, and is denoted by $proj_\vec{b} \vec{u} = k\vec{b}$
+          </p>
+        </div>
+        <div class="page">
+          <h5 class="section-title-3">Cross Product</h5>
+          <p class="para-content">
+            If $\vec{u}\begin{bmatrix} u_1 \\ u_2 \\ u_3 \end{bmatrix} and \ \vec{v}\begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix} $ are two
+            vectors, then the <b>cross product</b> between the two $\vec{u} \times \vec{v}$ is a vector given by
+            $$ \vec{u} \times \vec{v} = \begin{bmatrix} u_2 & u_3 \\ v_2 & v_3 \end{bmatrix}  \ \vec{i} - \begin{bmatrix} u_1 & u_3 \\ v_1 & v_3 \end{bmatrix} \ \vec{j} + \begin{bmatrix} u_1 & u_2 \\ v_1 & v_2 \end{bmatrix} \ \vec{k} $$
+            $$ \begin{bmatrix} \vec{i} & \vec{j} & \vec{k} \\ u_1 & u_2 & u_3 \\ v_2 & v_2 & v_3 \end{bmatrix} $$
+          </p>
+          <h5 class="section-title-3">Properties of Cross Product</h5>
+          <p class="para-content">
+            $ \vec{u} \ \times \ \vec{v} \ \text{is orthogonal to both} \ \vec{u} \ \text{and} \ \vec{v} \ \ \text{i.e.} \ \
+            \vec{u} . (\vec{u} \times \vec{v}) = 0 \ \ \text{and} \ \ \vec{v} . (\vec{u} \times \vec{v}) = 0 $
+
+            $ || \vec{u} \times \vec{v} || = || \vec{u} || . || \vec{v} \ \sin\theta $
+          </p>
+
+          <!-- <img src="../../images/cross_prod_prop.png" width="90%"/> -->
+        </div>
+			<div>&nbsp;</div>
+			<div style="width:10%;border-left:1px solid #e6d9ce;height:20cm;float:right;position:fixed;right:4%">
+			</div>
+
+    </div> <!-- end of container -->
+  </div> <!-- end of full screen -->
+  <!--<footer class="page-footer"></footer>-->
+  <script>
+    (function ($) {
+      $(function () {
+
+        function handleSideBar() {
+          var screenWidth = screen.width;
+
+          if (screenWidth <= 900) {
+            $('.button-collapse').show();
+            $('.button-collapse').sideNav();
+            $('.page').css('padding', '10px')
+          } else {
+            $('.button-collapse').hide();
+            $('.page').css('padding', '20mm 30mm 20mm 30mm');
+          }
+        }
+
+        handleSideBar();
+        window.addEventListener('resize', function () {
+          handleSideBar();
+        });
+
+      }); // end of document ready
+    })(jQuery); // end of jQuery name space
+  </script>
+</body>
+
+</html>

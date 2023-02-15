@@ -37,15 +37,17 @@
 
           <ul id="nav-mobile" class="side-nav fixed">
             <li><a href="index.html">Home</a></li>
+            <li style="padding-bottom:15px"><a href="maths-for-ai/maths-for-ai-index.html"><span style="line-height:25px">Maths for<br>Artificial Intelligence</span></a></li>
 				    <li style="padding-bottom:15px"><a href="linear-algebra-content-list.html"><span style="line-height:25px">Linear Algebra using<br>Math Expressions and Numpy</span></a></li>
             <li style="padding-bottom:15px"><a href="multivariable-calc-content-list.html"><span style="line-height:25px">Multivariable<br>Calculus and Automatic Differentiation</span></a></li>
 				    <li style="padding-bottom:15px"><a href="ml-content-list.html"><span style="line-height:25px">Machine Learning with scikit-learn (Supervised, Unsupervised, and Ensemble Learning)</span></a></li>
 				    <li style="padding-bottom:15px"><a href="dl-content-list.html"><span style="line-height:25px">Deep Learning with CNN, RNN &amp; LSTM</span></a></li>
 				    <li style="padding-bottom:15px"><a href="cv-content-list.html"><span style="line-height:25px">Computer Vision for Image recognition and OCR</span></a></li>
 						<li style="padding-bottom:15px"><a href="nlp-content-list.html"><span style="line-height:25px">Natural Language<br>Processing with Transformers</span></a></li>
-						<li><a href="ml-ops-content-list.html"><span style="line-height:25px">ML-Ops<br>Deploying Models to Production</span></a></li>
-            <li><a href="papers-content-list.html"><span style="line-height:25px">Interesting <br>Research Papers</span></a></li>
+            <li style="padding-bottom:15px"><a href="ml-ops-content-list.html"><span style="line-height:25px">ML-Ops<br>Deploying Models to Production</span></a></li>
+            <li style="padding-bottom:15px"><a href="papers-content-list.html"><span style="line-height:25px">Interesting <br>Research Papers</span></a></li>
           </ul>
+
           <a href="#" data-activates="nav-mobile" class="button-collapse">
             <i class="mdi-navigation-menu brand-text-color"></i>
           </a>
@@ -57,40 +59,120 @@
     <div class="container" style="position:relative;top:56px;">
 			<div style="height:100%;float:left;padding:0px;margin:0px">
 			<div class="list-page">
-        <p class="topic-name" style="font-weight: 500">Table of Contents</p>
-				<h4 class="section-title-2">Introduction</h4>
-        <p class="para-content">According to World Health Organization (WHO), cardiovascular diseases (CVDs) are the number 1 cause of death globally, taking an estimated 17.9 million lives each year and affecting the quality of life of a large number of people worldwide. Prerequisites of the treatment of these types of disease involve proper diagnosis method to identify its occurrence and its type. Diagnosis of such diseases involve in-depth analysis of a large number of parameters. In this demo Pandas and Numpy is used for analysing one such dataset called <b>A1_heart_disease_dataset</b>.</p>
-        <h4 class="section-title-2">Pandas</h4>
+        <p class="topic-name" style="font-weight: 500">Calculus for Machine Learning</p>
+				<h4 class="section-title-2">Derivatives</h4>
+        <p class="para-content">Derivatives are an important concept in Machine Learning. Derivatives are used in Machine learning
+        for the purpose of optimization and used to minimize the error in Machine Learning. For example, the
+       task of a Machine Learning model forecasting house price is to optimize the best possible prediction.</p>
+        <h5 class="section-title-3">Instantaneous Rate of Change</h5>
         <p class="para-content">
-          A linear combination of two vectors is just a scalar times the first vector plus the scalar times the second
-          vector.
+          A derivative is an instantaneous rate of change of a function. Distance can be represented as a function, and its rate of chage is called Velocity.
+          The measure of how fast the distance is changing with respect to time is called the instantaneous rate ogf change and its the
+          slope of the tangent line. The instantaneous rate of change is a measure of how fast the relation between two variables is changing at any point.
         </p>
-        <h5 class="section-title-2">Linear Transformation</h5>
+        <h5 class="section-title-3">Slopes, minima and maxima</h5>
         <p class="para-content">
-          Linear operation preserves a Linear Combination. We have often heard that Differentiation is a linear
-          operation, because
-          the dericative
+          Minima, and maxima are the points of the function curve where the derivative of the tangent line is 0 or the derivative is 0
         </p>
-        <h5 class="section-title-2">Linear Transformation - Matrix Vector Multiplication</h5>
+        <h5 class="section-title-3">Derivatives Notations</h5>
         <p class="para-content">
-          Linear operation preserves a Linear Combination. We have often heard that Differentiation is a linear
-          operation, because
-          the dericative
+          $$ \text{function : } y = f(x) $$
+          $$ \text{Derivative of f is expressed as :} $$
+          $$ \text{Lagrange's Notation : } f'(x) $$
+          $$ \text{Leibniz's Notation : } \frac{dy}{dx} = \frac{d}{d} f(x) $$
         </p>
+        <h5 class="section-title-3">Derivative of a Constant</h5>
+        <p class="para-content">
+          Derivative of a constant is always 0 since there is no change in the function
+          $$ \frac{\Delta y}{\Delta x} = \frac{c - c}{x_1 - x_0} = 0 $$
+        </p>
+        <h5 class="section-title-3">Derivative of a Line</h5>
+        <p class="para-content">
+          The equation of a line is : $ f(x) = ax + b $
+          The derivative of a line is the slope of the line $ \Large{\frac{\Delta y}{\Delta x} = \frac{rise}{run} = a} $<br><br>
+          $ \Large{\frac{\Delta{y}}{\Delta{x}} = \frac{a(x + \Delta{x}) + b - (ax + b)}{\Delta{x}}} $<br><br>
+          $ \Large{\frac{\Delta{x}}{\Delta{x}}} = a $
+        </p>
+        <h5 class="section-title-3">Derivative of Quadratic</h5>
+        <p class="para-content">
+          Quadratics : $ y = f(x) = x^2 $ <br><br>
+          Slope : $ \Large{\frac{\Delta f}{\Delta x} = \frac{(x + \Delta{x})}{f(x)}} $ <br><br>
+          $ \Large{\frac{df}{dx} \ \frac{\Delta f}{\Delta x} = \frac{(x + \Delta{x})^{2} - x^{2}}{\Delta{x}}} $ <br><br>
+          $ \Large{= 2x  \ \ \text{as} \ \Delta{x} \ \leftarrow \ 0 } $ <br><br>
+          $ \Large{ f'(x) = 2x } $
+        </p>
+        <h5 class="section-title-3">Derivative of Cubic Functions</h5>
+        <p class="para-content">
+          Cubic : $ y = f(x) = x^3 $ <br><br>
+          Slope : $ \Large{\frac{\Delta f}{\Delta x} = \frac{(x + \Delta{x})^{2} - x^{2}}{\Delta{x}}} $ <br><br>
+          $ 3x \Delta x + 3x^{2} + \Delta x^{2}$
+        </p>
+        <h5 class="section-title-3">Derivative of Hyperbola Functions</h5>
+        <p class="para-content">
+          Hyperbola : $ y = f(x) = x^{-1} = \frac{1}{x} $ <br><br>
+          $ f'(x) = -x^{-2} $
+        </p>
+        <h5 class="section-title-3">Derivative of Power Functions</h5>
+        <p class="para-content">
+          <section id="section-4">
+            <div class="row">
+                  <table class="table">
+                    <tbody>
+                      <tr>
+                        <td>$ \large{f(x) = x^{2}} $</td>
+                        <td>$ \large{f'(x) = 2x^{1}} $</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>$ \large{f(x) = x^{3}} $</td>
+                        <td>$ \large{f'(x) = 3x^{2}} $</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>$ \large{f(x) = x^{-1}} $</td>
+                        <td>$ \large{f'(x) = (-1)x^{-2}} $</td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            <div class="row">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td>$ \large{f(x) = x^{n}} $</td>
+                    <td>$ \large{f'(x) = \frac{d}{dx} f(x) = nx^{(n - 1)}} $</td>
+                    <td></td>
+                  </tr>
+              </table>
+            </div>
+          </section>
+        </p>
+        <h5 class="section-title-3">Derivatives of Trigonometric Function</h5>
+        <p class="para-content">
+          $$ \large{y = f(x) = \sin(x)} $$
+          $$ \large{f'(x) = \cos(x)} $$
+
+          $$ \large{y = f(x) = \cos(x)} $$
+          $$ \large{f'(x) = -\sin(x)} $$
+        </p>
+        <h5 class="section-title-3">Derivatives of Exponential Function</h5>
+        <p class="para-content">
+          $$ \large{y = f(x) = e^x} $$
+          $$ \large{f'(x) = e^x} $$
+        </p>
+        <h5 class="section-title-3">Derivatives of Exponential Function</h5>
       </div>
 			<div>&nbsp;</div>
 			</div>
     </div>
-
   </div>
   <!--<footer class="page-footer"></footer>-->
   <script>
     (function ($) {
       $(function () {
-
         function handleSideBar() {
           var screenWidth = screen.width;
-
           if (screenWidth <= 900) {
             $('.button-collapse').show();
             $('.button-collapse').sideNav();
@@ -100,12 +182,10 @@
             $('.page').css('padding', '20mm 30mm 20mm 30mm');
           }
         }
-
         handleSideBar();
         window.addEventListener('resize', function () {
           handleSideBar();
         });
-
       }); // end of document ready
     })(jQuery); // end of jQuery name space
   </script>

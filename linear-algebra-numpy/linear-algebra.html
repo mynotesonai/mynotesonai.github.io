@@ -56,66 +56,48 @@
     <div class="container" style="position:relative;top:56px;">
 			<div style="height:100%;float:left;padding:0px;margin:0px">
 				<div class="page">
-        <p class="topic-name" style="font-weight: 500">Linear Algebra - Concepts and Examples</p>
-        <h4 class="section-title-2">Introduction</h4>
-        <p class="para-content">Information in Science, Mathematics and Business are often
-          arranged into rows and columns that forms a rectangular structure called Matrix
-          (Matrices in the plural form). Matrices can be viewed astables that can contain physical
-          observations from the real world or from the Mathematical contexts as well. For example,
-        we can see that in order to solve a system of linear equations
-
-        $$ 5x + y = 3 $$
-        $$ 2x + 2y = 6 $$
-
-        the information can be embodied in the following Matrix
-
-        $$\begin{bmatrix} 5 & 1 \\ 2 & 2 \end{bmatrix}$$
-      </p>
-      <p class="para-content"> This is just one example and matrices are more than a tool for solving equations and they
-        are Mathematical objects in their own right. The branch of Mathematics that performs the study
-        of matrices and related topics that forms the mathematical field that we call “linear algebra.” </p>
-
-
-      <h4 class="section-title-2">Linear Algebra - Concepts and Examples</h4>
-      <p class="para-content">
-        Systems of Linear Equations and Matrices.
-      </p>
-      <!-- <a href="./linear-algebra-numpy/linear-algebra.html" class="read-more-link">Read More</a> -->
-			<h5 class="section-title-3">Linear Algebra</h5>
-        <p class="para-content">Information in science, business, and mathematics often can be represented as matrices organized into
-          rows and columns. Matrices often appear as tables of numerical data that arise from physical observations, but they
-          occur in various Mathematical contexts as well. Linear algebra is a branch of Mathematics that deals with matrices and vectors.
-          Vectors are set of items that belog together. The number of items in a vector determines the dimension of the vector.</p>
-        <h5 class="section-title-3">Linear equations</h5>
-        <p class="para-content">
-        </p>
-        <h5 class="section-title-3">Systems of linear equations</h5>
-        <p class="para-content">
-          A system of linear equations with m number of equations and n unknowns has the following form <br><br>
-          $ a^{1}_{1} x{1} + a^{1}_{2} x{2} + ........ +  a^{1}_{n} x{n} = b^{1} $ <br><br>
-          $ a^{2}_{1} x{1} + a^{2}_{2} x{2} + ........ +  a^{2}_{n} x{n} = b^{1} $ <br><br><br>
-          $ a^{m}_{1} x{1} + a^{m}_{2} x{2} + ........ +  a^{m}_{n} x{n} = b^{m} $
-        </p>
-        <p class="para-content">
-          We need to determine whether such system has a solution, if this solution is unique and in finding
-          the solution(s). The system can be written in the abbreviated the system to
-          $$ \Large{Ax = b} $$
-          $$ \Large{A = }\begin{bmatrix} a^1_1 & a^1_2 & ... & a^1_n \\
-                              a^2_1 & a^2_2 & ... & a^2_n \\
-                              .... & .... & ... & .... \\
-                              .... & .... & ... & .... \\
-                              a^m_1 & a^m_2 & ... & a^m_n\end{bmatrix} $$ <br><br>
-         is an $ m \times n $ matrix and <br><br>
-         $$ \Large{b = }\begin{bmatrix} b^1  \\
-                                        b^2  \\
-                                        .... \\
-                                        .... \\
-                                        b^m \end{bmatrix} $$ <br><br> and <br><br>
-
-        </p>
+          <p class="topic-name" style="font-weight: 500">Linear Algebra - Concepts and Examples</p>
+          <p class="para-content">Information in Science, Mathematics and Business are often
+            arranged into rows and columns that forms a rectangular structure called Matrix
+            (Matrices in the plural form). Matrices can be viewed astables that can contain physical
+            observations from the real world or from the Mathematical contexts as well. For example,
+            we can see that in order to solve a system of linear equations
+            $$ 5x + y = 3 $$
+            $$ 2x + 2y = 6 $$
+          the information can be embodied in the following Matrix
+          $$\begin{bmatrix} 5 & 1 \\ 2 & 2 \end{bmatrix}$$
+          </p>
+          <p class="para-content"> This is just one example and matrices are more than a tool for solving equations and they
+            are Mathematical objects in their own right. The branch of Mathematics that performs the study
+            of matrices and related topics that forms the mathematical field that we call “linear algebra.” </p>
+          <h5 class="section-title-3">Systems of linear equations</h5>
+          <p class="para-content">
+            Generally a finite number of linear equations with a finite number of unknowns x, y, z, w, . . . is
+            called a system of linear equations or just a linear system.
+            A system of linear equations with m number of equations and n unknowns has the following form <br><br>
+            $ a^{1}_{1} x{1} + a^{1}_{2} x{2} + ........ +  a^{1}_{n} x{n} = b^{1} $ <br><br>
+            $ a^{2}_{1} x{1} + a^{2}_{2} x{2} + ........ +  a^{2}_{n} x{n} = b^{1} $ <br><br><br>
+            $ a^{m}_{1} x{1} + a^{m}_{2} x{2} + ........ +  a^{m}_{n} x{n} = b^{m} $
+          </p>
+          <p class="para-content">
+            We need to determine whether such system has a solution, if this solution is unique and in finding
+            the solution(s). The system can be written in the abbreviated the system to
+            $$ \Large{Ax = b} $$
+            $$ \Large{A = }\begin{bmatrix} a^1_1 & a^1_2 & ... & a^1_n \\
+                                a^2_1 & a^2_2 & ... & a^2_n \\
+                                .... & .... & ... & .... \\
+                                .... & .... & ... & .... \\
+                                a^m_1 & a^m_2 & ... & a^m_n\end{bmatrix} $$ <br><br>
+           is an $ m \times n $ matrix and <br><br>
+          </p>
       </div>
       <div class="page">
         <p class = "para-content">
+          $$ \Large{b = }\begin{bmatrix} b^1  \\
+                                         b^2  \\
+                                         .... \\
+                                         .... \\
+                                         b^m \end{bmatrix} $$ <br><br> and <br><br>
           $$
           \Large{x = }\begin{bmatrix} x^1  \\
                                       x^2  \\
@@ -128,10 +110,173 @@
         <p class = "para-content">
           $$ \large{a_1x_1 + a_2x_2 + .... + a_nx_n = 0} $$
         </p>
-        <h5 class="section-title-3">Systems of linear equations</h5>
-        <p class = "para-content">
+        <h4 class="section-title-3">Vectors and Types of Vectors</h4>
+        <p class="para-content">
+          A common approach of formalizing intuitive concepts is to construct a set of objects and set of rules to
+          manipulate these object. Linear Algebra is the study of vectors and certain rules to manipulate vectors.
+          Vectors can be geometric, polynomial, audio signals or elements of $ x^{n} $
+        </p>
+        <h5 class="section-title-3">Matrices</h5>
+        <p class="para-content">
+          They can be used to compactly represent systems of linear equations, but they also represent linear functions (linear mappings)
+          $$ \large{A = }\begin{bmatrix} a^1_1 & a^1_2 & ... & a^1_n \\
+                              a^2_1 & a^2_2 & ... & a^2_n \\
+                              .... & .... & ... & .... \\
+                              .... & .... & ... & .... \\
+                              a^m_1 & a^m_2 & ... & a^m_n\end{bmatrix} $$ <br><br>
+         is an $ m \times n $ matrix and <br><br>
+      </div>
+      <div class="page">
+        <h5 class="section-title-3">Vector Spaces</h5>
+        <p class="para-content">
+          A vector space is a set of elements, known as Vectors, may be added and multiplied together.
+          A (real) vector space is a set V that has the following properties:
+          1. We can add elements of V , i.e., for any elements u 2 V and v 2 V there is an element in V called the sum u + v.<br>
+          2. Addition is commutative, i.e. for all u; v 2 V , u + v = v + u.<br>
+          3. Addition is associative, i.e. for all u; v;w 2 V , (u + v) + w = u + (v + w).<br>
+          4. There is an element 0 (called the zero vector) in V such that, for all u 2 V , u + 0 = u.<br>
+          5. For any $ u \in V $ there is an element called $-u \in V$ such that $ u + (-u) = 0$.<br>
+          6. We can scale elements by real numbers, for any element $ -u \in V$ and $ u \in V $<br>
+          there is an element $\alpha u \in V $.<br>
+          7. Scaling is distributive (with respect to vector addition), i.e. $ \alpha(u + v) =  \alpha u + \alpha v $.<br>
+          8. Scaling is distributive (with respect to addition of the scalar), i.e. $( \alpha + \beta )u = \alpha u + \beta u.<br>
+          9. Scaling is associative, i.e. (\alpha \beta)u = \alpha (\beta u).<br>
+          10.Scaling by 1 does not change u, i.e. 1.u = u. <br>
+
+          The elements of the vector space V are called vectors and the numbers of R are called scalars.
+        </p>
+        <h5 class="section-title-3">Vector Spaces</h5>
+        <p class="para-content">
+          It is possible to find a set of vectors with which we can represent every vector in the vector
+          space by adding them together and scaling them. This set of vectors is the basis of the vector space.
+          Given a Vector space V with $ k \in \mathbf{N}$ and $ x_1, x_2, ...., x_k \in V $. If there is a non-trivial
+          linear combination, such that $ 0 = \sum^{k}_{i=1} \lambda_{i}x_{i}$ with atleast one $\lambda_i \neq 0 ,
+          the vectors  $ x_1, x_2, ...., x_k $ are linearly dependent. If only trivial solution exists then they
+          are linearly independent.
+        </p>
+        <h5 class="section-title-3">Vector Operations</h5>
+        <p class="para-content">
+          $$  \vec{r} + \vec{r} = \vec{s} + \vec{r} $$
+          $$ 2r = r + r $$
+          $$ \lVert r \rVert^{2} = \sum_i r^{2}{i} $$
+        </p>
+        <h5 class="section-title-3">Norms</h5>
+        <p class="para-content">
+          A norm on a vector space V is a function, which assigns each vector x its length \lVert x \rVert
+        </p>
+        <h5 class="section-title-3">Dot Product or Inner Product</h5>
+        <p class="para-content">
+          $$ \large{r.s = \sum_i r_{i}s_{i}} $$
+        </p>
+        <h5 class="section-title-3">Properties of Inner Product</h5>
+        <p class="para-content">
+          commutative : $ r.s = s.r $
+        </p>
+        <p class="para-content">
+          distributive : $ r.(s + t) = r.s + r.t $
+        </p>
+        <p class="para-content">
+          associative : $ r.(a.s) = a(r.s) $
+        </p>
+        <p class="para-content">
+          $ r.r = \lVert r \rVert^{2} $
         </p>
       </div>
+      <div class="page">
+        <h5 class="section-title-3">Vector Projection</h5>
+        <p class="para-content">
+            $ \Large{\frac{r.s}{r.r} r} $
+        </p>
+        <h5 class="section-title-3">Basis</h5>
+        <p class="para-content">
+          A basis is a set of n vectors that:<br>
+          (i) are not linear combinations of each other<br>
+          (ii) span the space<br>
+          The space is then n-dimensional.
+        </p>
+        <h5 class="section-title-3">Matrices</h5>
+        <p class="para-content">
+          Matrix Operations:
+          $ \begin{bmatrix} a & c \\ b & d \end{bmatrix} \begin{bmatrix} e \\ f \end{bmatrix}  =
+          \begin{bmatrix} ae & + & bf \\ ce & + & df \end{bmatrix}
+             $
+        </p>
+        <p class="para-content">
+          Identity :
+          $ I = \begin{bmatrix} 1 & 0 \\
+                              0 & 1 \end{bmatrix} $
+        </p>
+        <p class="para-content">
+          Clock-wise rotation by $\theta $ :
+          $
+           \begin{bmatrix} \cos \theta & \sin \theta \\ -\cos \theta & \sin \theta \end{bmatrix}
+          $
+        </p>
+        <p class="para-content">
+          <b>determinant of 2x2 matrix:</b> $ \begin{vmatrix} a & b \\ c & d \end{vmatrix}=ad-bc $
+        </p>
+        <p class="para-content">
+          <b>Change of basis:</b> Change from an original basis to a new, primed basis.
+          The columns of the transformation matrix B are the new
+          basis vectors in the original coordinate system. So
+          $$ B\vec{r}' = \vec{r} $$
+          Where r' is the vector in the B-basis, and r is the vector in the original basis. Or;
+          $$  \vec{r}' =  B^{-1}\vec{r}
+        </p>
+        <h5 class="section-title-3">Orthogonality, Orthonormal bases</h5>
+        <p class="para-content">
+          Let V be an inner product space, $ x \in V $ and $ U \subseteq V $ be a subspace with basis
+          $ e_1, ....., e_k $. Then $ x \perp U $ if and only if $ x \perp e_j \text{for} 1 \leq j \leq k.
+        </p>
+        <p class="para-content">
+          <b>Orthonormal Matrix:</b> If a matrix is orthonormal(all the columns are of unit size and orthogonal
+          to each other) then, the transpose of A is equal to Inverse of A.
+          $$ A^{T} = A^{-1} $$
+        </p>
+        <h5 class="section-title-3">Gram-Schmidt process of constructing an orthonormal basis</h5>
+        <p class="para-content">
+
+          Gram-Schmidt is an orthogonalization process. It helps find
+          the orthoinormal basis of a Matrix and this orthonormal basis is desirable because
+          it simplifies the computations considerably. These orthonormal basis are the bedrock of feature
+          extraction when the dataset is expressed in terms of a vector space and hence linear
+          algebraically computable. Following are the steps of Gram-Schmidt orthogonalization process.<br>
+          <b>Step 1.</b> Choose an arbitrary basis $ u_1, ....., u_n $ of V. Set $v_1= u_1$ <br>
+          <b>Step 2.</b> Modify $u_2$ by adding a multiple of $v_1$, so the resulting vector is orthogonal to $v_1$:<br>
+          $$ v_2 = u_2 - \frac{\begin{bmatrix} u_2 \\ v_1 \end{bmatrix}}{\begin{bmatrix} v_1 \\ v_1 \end{bmatrix}}v_1 = u_2 - pr_{v_1} u_2 $$<br>
+        </p>
+       </div>
+       <div class="page">
+         <p class="para-content">
+           $ \begin{bmatrix} v_1, v_1 \end{bmatrix} \neq 0 $ because B is positive definite. We check $v_2 \perp v_1$<br>
+           $\begin{bmatrix} v_2 \\ v_1 \end{bmatrix} = \large{[u_2 - \frac{\begin{bmatrix} u_2 \\ v_1 \end{bmatrix}}{\begin{bmatrix} v_1 \\ v_1 \end{bmatrix}} v_1, v_2 ]} $ <br>
+           $ = \begin{bmatrix} u_2 \\ v_1 \end{bmatrix} - \begin{bmatrix} u_2 \\ v_1 \end{bmatrix} \large{\frac{\begin{bmatrix} v_1 \\ v_1 \end{bmatrix}}{\begin{bmatrix} v_1, v_1 \end{bmatrix}}} = 0 $
+         </p>
+         <p class="para-content">
+           Constructing $v_{k+1}$ by modifying $u_{k+1}$ as follows
+           $$ v_{k+1} = u_{k+1} - \frac{\begin{bmatrix} u_{k+1} \\ v_1 \end{bmatrix}}{\begin{bmatrix} v_1 \\ v_1 \end{bmatrix}} v_1 - ..... - \frac{\begin{bmatrix} u_{k+1} \\ v_k \end{bmatrix}}{\begin{bmatrix} v_k \\ v_k \end{bmatrix}} v_k = u_{k+1} - pr_{v_1} u_{k+1} - .... - pr_{v_k} u_{k+1}$$
+           $ v_{k+1} \perp \text{span}(v_1. ...., v_k) $ <br>
+           $ \begin{bmatrix} v_{k+1} \\ v_j \end{bmatrix} = [u_{k+1} - \large{\frac{\begin{bmatrix} u_{k+1} \\ v_1 \end{bmatrix}}{\begin{bmatrix} v_1 \\ v_1 \end{bmatrix}}}  v_1 - ... - \frac{\begin{bmatrix} u_{k+1} \\ v_k \end{bmatrix}}{\begin{bmatrix} v_k \\ v_k \end{bmatrix}}  v_k, v_j $ <br>
+           $ = \begin{bmatrix} u_{k+1} \\ v_j \end{bmatrix} - \begin{bmatrix} u_{k+1} \\ v_j \end{bmatrix} \frac{\begin{bmatrix} v_j \\ v_j \end{bmatrix}}{\begin{bmatrix} v_j \\ v_j \end{bmatrix}} = 0 $ <br>
+           It follows by indeuction that <br>
+           $ v_{k+1} = u_{k+1} + \alpha^{k-1}_{k} u_{k} + ... + \alpha^{1}_{k} u_1 $ <br>
+        </p>
+         <p class="para-content">
+           <b>last step:</b> If required, normalise the modified vectors to obtain unit vectors<br>
+           $ \large{e_{j} = \frac{1}{\lVert v_{j} \rVert^{2}} v_{j}} $ <br>
+         </p>
+         <h5 class="section-title-3">EigenValues and Eigenvectors</h5>
+         <p class="para-content">
+           <b>EigenVector</b> $\vec{v}$ statisfies $ T(\vec{v}) = \lambda \vec{v} $ for the transformation T, and $\lambda$
+           is the <b>eigenvalue</b> that is associated with the eigenvector $\vec{v}$. The transformation T is a linear
+           Transformation that can be represented as $T(\vec{v}) = A\vec{v}$
+          </p>
+          <p class="para-content">
+            Eigenvectors $\vec{v}$ are do not change direction when transformation such as T is applied to it. So if we
+            apply T to a vector $\vec{v}$ and the result $T(\vec{v})$ is parallel to the original $\vec{v}$ then
+            $\vec{v}$ is an eigenvector.
+          </p>
+       </div>
 			<div>&nbsp;</div>
 			</div>
 			   <div style="width:10%;border-left:1px solid #e6d9ce;height:20cm;float:right;position:fixed;right:4%">

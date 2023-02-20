@@ -37,8 +37,8 @@
 
           <ul id="nav-mobile" class="side-nav fixed">
             <li style="padding-bottom:15px"><a href="../index.html">Home</a></li>
-            <li style="padding-bottom:15px"><a href="../maths-for-ai-content-list.html"><span style="line-height:25px">Maths for<br>Artificial Intelligence</span></a></li>
-				    <li style="padding-bottom:15px"><a href="../linear-algebra-content-list.html"><span style="line-height:25px">Linear Algebra using<br>Math Expressions and Numpy</span></a></li>
+            <!-- <li style="padding-bottom:15px"><a href="../maths-for-ai-content-list.html"><span style="line-height:25px">Maths for<br>Artificial Intelligence</span></a></li>
+				    <li style="padding-bottom:15px"><a href="../linear-algebra-content-list.html"><span style="line-height:25px">Linear Algebra using<br>Math Expressions and Numpy</span></a></li> -->
             <li style="padding-bottom:15px"><a href="../multivariable-calc-content-list.html"><span style="line-height:25px">Multivariable<br>Calculus and Automatic Differentiation</span></a></li>
 				    <li style="padding-bottom:15px"><a href="../ml-content-list.html"><span style="line-height:25px">Machine Learning with scikit-learn (Supervised, Unsupervised, and Ensemble Learning)</span></a></li>
 				    <li style="padding-bottom:15px"><a href="../dl-content-list.html"><span style="line-height:25px">Deep Learning with CNN, RNN &amp; LSTM</span></a></li>
@@ -240,6 +240,36 @@
             Eigenvectors $\vec{v}$ are do not change direction when transformation such as T is applied to it. So if we
             apply T to a vector $\vec{v}$ and the result $T(\vec{v})$ is parallel to the original $\vec{v}$ then
             $\vec{v}$ is an eigenvector.
+          </p>
+          <h5 class="section-title-3">Diagonalization</h5>
+          <p class="para-content">
+            Diagonalization enables us to find the powers of Matrices such as $A^{100}$. In this process
+            the matrix A is factorized into three matrices, one of which is a diagonal matrix. The primary
+            objective of deriving a diagonal matrix is, any matrix calculation is easier with a diagonal
+            matrix.
+          </p>
+          <p class="para-content">
+            For a square matrix A, there is an invertible matrix P (P has an inverse) such that $P^{-1}AP$
+            produces a diagonal matrix. The process of converting any $ n \times n $ matrix into a diagonal
+            matrix is called <b>diagonalization</b>
+          </p>
+          <h5 class="section-title-3">Singular value Decomposition</h5>
+          <p class="para-content">
+            Singular Value Decomposition is a useful matrix factorization technique. This decomposition
+            technique can be applied not only to symmetric matrix but to any matrix A
+            where A is m by n and $ m \geq n $. SVD factorization breaks
+            the matrix down into useful parts such as orthogonal matrices.
+          </p>
+          <h5 class="section-title-3">Singular value Decomposition Theorem</h5>
+          <p class="para-content">
+            We can decompose any given matrix A of size of m by n with positive singular values
+            $ \sigma_1 \geq  \sigma_2 \geq .... \geq \sigma_k \geq 0 \ \ \text{where} k \geq n \ \text{into} \ \large{UDV^{T}}, \ \text{that is}$
+            $$ large{A = UDV^{T} $$
+          </p>
+          <p class="para-content">
+            where U is an m by m orthogonal matrix, D is an m by n matrix and V is an n by
+            n orthogonal matrix. The values of m (rows) and n (columns) is the size of the given
+            matrix A.
           </p>
        </div>
 			<div>&nbsp;</div>
